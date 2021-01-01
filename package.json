@@ -2,6 +2,10 @@
   "name": "loginpagepp",
   "description": "page",
   "dependencies": {
+    "@polymer/app-layout": "^3.1.0",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/iron-selector": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.2",
     "@polymer/paper-input": "^3.2.1",
     "@polymer/polymer": "^3.0.0"
   },

@@ -14,9 +14,9 @@ class LoginPage extends PolymerElement {
       </style>
       <h2>saibalaji [[prop1]]!</h2>
       <div>Custom element</div>  
-      <paper-input label="Enter 1" value="[[prop1]]"></paper-input>
+      <paper-input label="Enter 1" value="{{king}}"></paper-input>
       <paper-input label="Enter 2" value="{{king}}"></paper-input>
-      <paper-input label="Enter 3"></paper-input>
+      <paper-input label="Enter 3" value="[[prop1]]"></paper-input>
     `;
   }
   static get properties() {
