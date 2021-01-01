@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-
+import './login-page.js';
 /**
  * @customElement
  * @polymer
