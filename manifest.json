@@ -1,0 +1,7 @@
+{
+  "name": "loginpagepp",
+  "short_name": "loginpagepp",
+  "description": "page",
+  "start_url": "/",
+  "display": "standalone"
+}
