@@ -3,6 +3,7 @@
   "description": "page",
   "dependencies": {
     "@polymer/app-layout": "^3.1.0",
+    "@polymer/app-route": "^3.0.2",
     "@polymer/iron-pages": "^3.0.1",
     "@polymer/iron-selector": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.2",
