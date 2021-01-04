@@ -24,7 +24,8 @@ class LoginPage extends PolymerElement {
         display: block;
         height: 100%;
         color: var(--container-text, blue);
-        background-image: var(--container-background, "ins.jpg");
+        background-image: var(--container-background, "default.png");
+
       }
       .card{
         width:50%;
@@ -103,21 +104,49 @@ class LoginPage extends PolymerElement {
 
       <h1>Login</h1>
       <paper-input always-float-label  min="1" 
-      max="10" auto-validate="true" type="number" label="CustomerId"  value="{{username}}" required></paper-input>
+      max="10" auto-validate="true"  label="CustomerId" id="customer" value="{{username}}" required></paper-input>
       <paper-input type="password"  min="1" 
-      max="10" auto-validate="true" always-float-label label="Password" value="{{password}}" required></paper-input>
+      max="10" auto-validate="true" always-float-label label="Password" id="password" value="{{password}}" required></paper-input>
 <div class="center">
-<paper-button raised class="custom indigo" on-click="handleClick">Login
+<paper-button raised class="custom indigo" on-click="login">Login
 </paper-button>
+</div>
+<div>
+<span id="warning" style="display:none;color:red;">this user credentials is correct</span>
 </div>
     </div>
     </div>
     
         `;
   }
-  handleClick(){
+  login(){
     console.log('sai');
-    this.set('route.path', '/renewalspage')
+   
+
+    var user1 = this.$.customer.value;
+    var pass = this.$.password.value;
+this.$.warning.style.display="none";
+this.$.warning.innerText="";
+
+
+    if(user1 == "name" && pass == "name"){
+localStorage.setItem("username",user1);
+this.$.customer.value="";
+this.$.password.value="";
+this.set('route.path', '/policy');   
+}
+else {
+  this.$.warning.style.display = "block";
+  if(user1==""){
+this.$.warning.innerText= "customer is required";
+  }
+  else if(pass==""){
+    this.$.warning.innerText= "password is required";
+  }
+  else if(user1 != "name" || pass !="name"){
+this.$.warning.innerText = "invalid credentials"
+  }
+}
   }
   static get properties() {
     return {
@@ -137,6 +166,7 @@ class LoginPage extends PolymerElement {
       subroute: Object
     };
   }
+
 }
 
 window.customElements.define('login-page', LoginPage);
