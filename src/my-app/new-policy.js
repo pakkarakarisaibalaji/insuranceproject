@@ -16,21 +16,17 @@ import '@polymer/paper-button/paper-button.js';
  * @customElement
  * @polymer
  */
-class LoginPage extends PolymerElement {
+class NewPolicy extends PolymerElement {
   static get template() {
     return html`
       <style>
       :host {
         display: block;
         height: 100%;
-        color: var(--container-text, blue);
-        background-image: var(--container-background, "ins.jpg");
+        
       }
       .card{
         width:50%;
-        position: relative;
-        top: 6em;
-        right: 6em;
         padding: 16px;
         color: #757575;
         border-radius: 5px;
@@ -41,7 +37,7 @@ class LoginPage extends PolymerElement {
         margin: 16px 0;
         color: #212121;
         font-size: 22px;
-        padding-left: 7em;
+        padding-left: 5em;
       }
       h5{
         margin: 16px 0;
@@ -98,20 +94,19 @@ class LoginPage extends PolymerElement {
       </style>
       
       <app-location route="{{route}}"></app-location>
-      <div class="savings">
+    
       <div class="card">
 
-      <h1>Login</h1>
-      <paper-input always-float-label  min="1" 
-      max="10" auto-validate="true" type="number" label="CustomerId"  value="{{username}}" required></paper-input>
-      <paper-input type="password"  min="1" 
-      max="10" auto-validate="true" always-float-label label="Password" value="{{password}}" required></paper-input>
-<div class="center">
-<paper-button raised class="custom indigo" on-click="handleClick">Login
-</paper-button>
-</div>
+      <h1>New Policy Registration</h1>
+      <paper-input always-float-label label="Insurance Name" value="{{username}}"></paper-input>
+      <paper-input always-float-label label="Re-enter Insurance Name" value="{{username}}"></paper-input>
+      <paper-input   always-float-label label="Premium Amount" value="[[password]]"></paper-input>
+      <paper-input   always-float-label label="Re-enter Premium Amount" value="[[password]]"></paper-input>
+      <paper-input   always-float-label label="Monthly Premium" value="[[month]]"></paper-input>
+      <paper-input   always-float-label label="Name" value="[[Name]]"></paper-input>
+
     </div>
-    </div>
+    
     
         `;
   }
@@ -133,10 +128,22 @@ class LoginPage extends PolymerElement {
         type: String,
         value: ''
       },
+      premium: {
+        type: Number,
+        value: ''
+      },
+      month: {
+        type: String,
+        value: ''
+      },
+      Name: {
+        type: String,
+        value: ''
+      },
       routeData: Object,
       subroute: Object
     };
   }
 }
 
-window.customElements.define('login-page', LoginPage);
+window.customElements.define('new-policy', NewPolicy);

@@ -1,5 +1,15 @@
-import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import './login-page.js';
+/**
+ * @license
+ * Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils/settings.js';
 import '@polymer/app-layout/app-drawer/app-drawer.js';
 import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
 import '@polymer/app-layout/app-header/app-header.js';
@@ -11,74 +21,159 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-/**
- * @customElement
- * @polymer
- */
+
+
+// Gesture events like tap and track generated from touch will not be
+// preventable, allowing for better scrolling performance.
+setPassiveTouchGestures(true);
+
+// Set Polymer's root path to the same value we passed to our service worker
+// in `index.html`.
+setRootPath(MyAppGlobals.rootPath);
+
 class MyApp extends PolymerElement {
   static get template() {
     return html`
       <style>
-      
-      :host {
-        display: block;
-        height: 100%;
-        
-      }
-      .card{
-        width:375px;
-        margin: 8em;
-        padding: 16px;
-        color: #757575;
-        border-radius: 5px;
-        background-color: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      }
-      h1{
-        margin: 16px 0;
-        color: #212121;
-        font-size: 22px;
-        padding-left: 7em;
-      }
-      h5{
-        margin: 16px 0;
-        color: #212121;
-        font-size: 12px;
-        
-      }
-      .savings{
-      padding-left: 20em;
-        background:
-      }
+        :host {
+          --app-primary-color: #4285f4;
+          --app-secondary-color: black;
 
+          display: block;
+        }
+
+        app-drawer-layout:not([narrow]) [drawer-toggle] {
+          display: none;
+        }
+
+        app-header {
+          color: #fff;
+          background-color: var(--app-primary-color);
+        }
+
+        app-header paper-icon-button {
+          --paper-icon-button-ink-color: white;
+        }
+
+        .drawer-list {
+          margin: 0 20px;
+        }
+
+        .drawer-list a {
+          display: block;
+          padding: 0 16px;
+          text-decoration: none;
+          color: var(--app-secondary-color);
+          line-height: 40px;
+        }
+
+        .drawer-list a.iron-selected {
+          color: black;
+          font-weight: bold;
+        }
       </style>
-      
-      <div class="savings">
-      <div class="card">
 
-      <h1>Login</h1>
-      <h5>Customerid</h5>
-      <paper-input  value="{{username}}"></paper-input>
-      <h5>Password</h5>
-      <paper-input  value="{{password}}"></paper-input>
-    </div>
-    </div>
-  
+      <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
+      </app-location>
+
+      <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
+      </app-route>
+
+      <app-drawer-layout fullbleed="" narrow="{{narrow}}">
+        <!-- Drawer content -->
+        <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+          <app-toolbar>Life Insurance</app-toolbar>
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+            <a name="policy" href="[[rootPath]]policy">Policy</a>
+            <a name="renewalspage" href="[[rootPath]]renewalspage">Renewals</a>
+            <a name="new-policy" href="[[rootPath]]new-policy">New Policy</a>
+            <a name="loginpage" href="[[rootPath]]loginpage">LogOut</a>
+          </iron-selector>
+        </app-drawer>
+
+        <!-- Main content -->
+        <app-header-layout has-scrolling-region="">
+
+          <app-header  id="myheader" slot="header" condenses="" reveals="" effects="waterfall">
+            <app-toolbar>
+              <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
+              <div main-title="">Life Insurance</div>
+            </app-toolbar>
+          </app-header>
+          
+          <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
+            <login-page name="loginpage"></login-page>
+            <renewals-page name="renewalspage"></renewals-page>
+            <my-policy name="policy"></my-policy>
+           <new-policy name="new-policy"></new-policy>
+          </iron-pages>
+        </app-header-layout>
+      </app-drawer-layout>
     `;
   }
+
   static get properties() {
     return {
-      prop1: {
+      page: {
         type: String,
-        value: 'saibalaji'
+        reflectToAttribute: true,
+        observer: '_pageChanged'
       },
-      king: {
-        type: String,
-        value: 'saibalaji'
-      }
+      routeData: Object,
+      subroute: Object
     };
   }
-  
+
+  static get observers() {
+    return [
+      '_routePageChanged(routeData.page)'
+    ];
+  }
+
+  _routePageChanged(page) {
+     // Show the corresponding page according to the route.
+     //
+     // If no page was found in the route data, page will be an empty string.
+     // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
+    if (!page) {
+      this.page = 'loginpage';
+    } else if (['loginpage','renewalspage','policy','new-policy'].indexOf(page) !== -1) {
+      this.page = page;
+    } else {
+      this.page = 'view404';
+    }
+
+    // Close a non-persistent drawer when the page & route are changed.
+    if (!this.$.drawer.persistent) {
+      this.$.drawer.close();
+    }
+  }
+
+  _pageChanged(page) {
+    // Import the page component on demand.
+    //
+    // Note: `polymer build` doesn't like string concatenation in the import
+    // statement, so break it up.
+    this.$.drawer.style.display = 'block';
+    this.$.myheader.style.display = 'block';
+    switch (page) {
+     case 'loginpage':
+        import('./login-page.js');
+        this.$.drawer.style.display = 'none';
+        this.$.myheader.style.display = 'none';
+        break;
+        case 'renewalspage':
+          import('./renewals-page.js');
+          break;
+          case 'policy':
+            import('./my-policy.js');
+            break;
+            case 'new-policy':
+            import('./new-policy.js');
+            break;
+            
+    }
+  }
 }
 
 window.customElements.define('my-app', MyApp);

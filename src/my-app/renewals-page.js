@@ -12,25 +12,22 @@ import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
+import './my-policy.js';
 /**
  * @customElement
  * @polymer
  */
-class LoginPage extends PolymerElement {
+class Renewals extends PolymerElement {
   static get template() {
     return html`
       <style>
       :host {
         display: block;
         height: 100%;
-        color: var(--container-text, blue);
-        background-image: var(--container-background, "ins.jpg");
+        
       }
       .card{
-        width:50%;
-        position: relative;
-        top: 6em;
-        right: 6em;
+        width:97%;
         padding: 16px;
         color: #757575;
         border-radius: 5px;
@@ -38,10 +35,10 @@ class LoginPage extends PolymerElement {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
       h1{
-        margin: 16px 0;
+       
         color: #212121;
         font-size: 22px;
-        padding-left: 7em;
+       
       }
       h5{
         margin: 16px 0;
@@ -52,9 +49,6 @@ class LoginPage extends PolymerElement {
       .savings{
       padding-left: 20em;
     
-      }
-      .center{
-        padding-left: 8em;
       }
       paper-button.custom {
         --paper-button-ink-color: var(--paper-pink-a200);
@@ -95,29 +89,73 @@ class LoginPage extends PolymerElement {
         color: white;
         background-color: bisque;
       }
+      td, th {
+        padding: 8px;
+        box-sizing: border-box;
+        white-space: nowrap;
+      }
+      
       </style>
       
       <app-location route="{{route}}"></app-location>
-      <div class="savings">
+   
       <div class="card">
+      <h1>Policy Renewals</h1>
+      <table is="s-table-lite" fixed-column>
+      <thead>
+        <tr>
+          <th>Policy NO</th>
+          <th>Insurance Name</th>
+          <th>Pending Premium</th>
+          <th>Month</th>
+          
+        </tr>
+      </thead>
+      <tbody is="s-tbody">
+        <tr is="s-tr" multi>
+          <td>1011</td>
+          <td>Matman</td>
+          <td>Yes</td>
+          <td>Oct 2020</td>
+          
+        </tr>
+        <tr is="s-tr" multi>
+          <td>1012</td>
+          <td>Tick</td>
+          <td>No</td>
+          <td>Dec 2020</td>
+         
+        </tr>
+        <tr is="s-tr" multi>
+          <td>1013</td>
+          <td>Smurf</td>
+          <td>Yes</td>
+          <td>Oct 2020</td>
+          
+        </tr>
+        <tr is="s-tr" multi>
+          <td>1014</td>
+          <td>Beyler</td>
+          <td>NO</td>
+          <td>Jun 2020</td>
+          
+        </tr>
+        <tr is="s-tr" multi>
+          <td>1015</td>
+          <td>Cool</td>
+          <td>Yes</td>
+          <td>Jul 2020</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    </div>
 
-      <h1>Login</h1>
-      <paper-input always-float-label  min="1" 
-      max="10" auto-validate="true" type="number" label="CustomerId"  value="{{username}}" required></paper-input>
-      <paper-input type="password"  min="1" 
-      max="10" auto-validate="true" always-float-label label="Password" value="{{password}}" required></paper-input>
-<div class="center">
-<paper-button raised class="custom indigo" on-click="handleClick">Login
-</paper-button>
-</div>
-    </div>
-    </div>
-    
         `;
   }
-  handleClick(){
-    console.log('sai');
-    this.set('route.path', '/renewalspage')
+  handleClick() {
+    console.log("button");
+    this.set('route-path','/loginpage')
   }
   static get properties() {
     return {
@@ -127,7 +165,8 @@ class LoginPage extends PolymerElement {
       },
       username: {
         type: String,
-        value: ''
+        value: '',
+        notify:true
       },
       password: {
         type: String,
@@ -139,4 +178,4 @@ class LoginPage extends PolymerElement {
   }
 }
 
-window.customElements.define('login-page', LoginPage);
+window.customElements.define('renewals-page', Renewals);
