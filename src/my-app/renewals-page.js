@@ -17,6 +17,20 @@ import './my-policy.js';
  * @customElement
  * @polymer
  */
+let profilesList = [
+  {policyNo: 1011, Name: 'Health Insurance', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
+  {policyNo: 1012, Name: 'Vehicle Insurance', PremiumStatus: 'Pending', PremiumPending: 'June 2020'},
+  {policyNo: 1013, Name: 'Savings Traditional', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
+  {policyNo: 1014, Name: 'Medical Insurance', PremiumStatus: 'Pending', PremiumPending: 'Oct 2020'},
+  {policyNo: 1015, Name: 'Personal Insurance', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
+  {policyNo: 1016, Name: 'Long Term Savings', PremiumStatus: 'Pending', PremiumPending: 'Nov 2020'},
+  {policyNo: 1017, Name: 'Retirement Plans', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
+  {policyNo: 1018, Name: 'Savings Plans ', PremiumStatus: 'Pending', PremiumPending: 'Dec 2020'},
+  {policyNo: 1019, Name: 'Child Savings', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
+  {policyNo: 1010, Name: 'Future plans', PremiumStatus: 'Pending', PremiumPending: 'Jan 2020'}
+  
+]
+
 class Renewals extends PolymerElement {
   static get template() {
     return html`
@@ -94,69 +108,85 @@ class Renewals extends PolymerElement {
         box-sizing: border-box;
         white-space: nowrap;
       }
+      /*media quiery for min-width-619px*/
+
+      @media (max-width: 619px){
+        :host {
+          display: block;
+          height: 100%;
+          
+        }
+        .card{
+          width:97%;
+          padding: 16px;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        h1{
+         
+          color: #212121;
+          font-size: 22px;
+         
+        }
+        h5{
+          margin: 16px 0;
+          color: #212121;
+          font-size: 12px;
+          
+        }
+        .savings{
+        padding-left: 20em;
       
+        }
+        
+        td, th {
+          padding: 8px;
+          box-sizing: border-box;
+          white-space: nowrap;
+        }
+      
+      }
       </style>
       
+      <!--<routing></routing>-->
       <app-location route="{{route}}"></app-location>
    
       <div class="card">
+
+      <!--<header></header>--> 
       <h1>Policy Renewals</h1>
-      <table is="s-table-lite" fixed-column>
-      <thead>
-        <tr>
-          <th>Policy NO</th>
-          <th>Insurance Name</th>
-          <th>Pending Premium</th>
-          <th>Month</th>
-          
-        </tr>
-      </thead>
-      <tbody is="s-tbody">
-        <tr is="s-tr" multi>
-          <td>1011</td>
-          <td>Matman</td>
-          <td>Yes</td>
-          <td>Oct 2020</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1012</td>
-          <td>Tick</td>
-          <td>No</td>
-          <td>Dec 2020</td>
-         
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1013</td>
-          <td>Smurf</td>
-          <td>Yes</td>
-          <td>Oct 2020</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1014</td>
-          <td>Beyler</td>
-          <td>NO</td>
-          <td>Jun 2020</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Cool</td>
-          <td>Yes</td>
-          <td>Jul 2020</td>
-          
-        </tr>
-      </tbody>
-    </table>
+      
+      <!--<table></table>-->
+
+    <table>
+      <tr>
+      <th>Policy</th>
+      <th>Insurance</th>
+      <th>PremiumStatus</th>
+      <th>PremiumPending</th>
+      </tr>
+      </table>
+      <dom-repeat items="[[profiles]]">
+        <template strip-whitespace="">
+        
+      <tr is="s-tr" multi>
+        <td>{{item.policyNo}}</td>
+        <td>{{item.Name}}</td>
+        <td>{{item.PremiumStatus}}</td>
+        <td>{{item.PremiumPending}}</td>
+        
+      </tr>
+      </template>
+      </dom-repeat>
+    
     </div>
 
         `;
   }
-  handleClick() {
-    console.log("button");
-    this.set('route-path','/loginpage')
-  }
+  
+  //<properties></properties>
   static get properties() {
     return {
       prop1: {
@@ -171,6 +201,11 @@ class Renewals extends PolymerElement {
       password: {
         type: String,
         value: ''
+      },
+      profiles: {
+        type: Array,
+        value: profilesList,
+        notify: true
       },
       routeData: Object,
       subroute: Object

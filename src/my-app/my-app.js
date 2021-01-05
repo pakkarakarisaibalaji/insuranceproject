@@ -44,6 +44,7 @@ class MyApp extends PolymerElement {
 
         app-drawer-layout:not([narrow]) [drawer-toggle] {
           display: none;
+          background-color: var(--app-primary-color);
         }
 
         app-header {
