@@ -65,14 +65,46 @@ class NewPolicy extends PolymerElement {
       <!--<paperinput></paperinput>-->
 
       <paper-input always-float-label label="Insurance Name" value="{{username}}"></paper-input>
-      <paper-input always-float-label label="Re-enter Insurance Name" value="{{username}}"></paper-input>
+      
       <paper-input   always-float-label label="Premium Amount" value="[[password]]"></paper-input>
-      <paper-input   always-float-label label="Re-enter Premium Amount" value="[[password]]"></paper-input>
+      
       <paper-input   always-float-label label="Monthly Premium" value="[[month]]"></paper-input>
       <paper-input   always-float-label label="Name" value="[[Name]]"></paper-input>
       <paper-input   always-float-label label="LastName" value="[[LastName]]"></paper-input>
       
     </div>
+
+    <div class="card">
+    <!--<header></header>-->
+    <h1>New Policy Registration</h1>
+
+    <!--<paperinput></paperinput>-->
+
+    <paper-input always-float-label label="Insurance Name" value="{{username}}"></paper-input>
+   
+    <paper-input   always-float-label label="Premium Amount" value="[[password]]"></paper-input>
+   
+    <paper-input   always-float-label label="Monthly Premium" value="[[month]]"></paper-input>
+    <paper-input   always-float-label label="Name" value="[[Name]]"></paper-input>
+    <paper-input   always-float-label label="LastName" value="[[LastName]]"></paper-input>
+    
+  </div>
+
+  <div class="card">
+  <!--<header></header>-->
+  <h1>New Policy Registration</h1>
+
+  <!--<paperinput></paperinput>-->
+
+  <paper-input always-float-label label="Insurance Name" value="{{username}}"></paper-input>
+  
+  <paper-input   always-float-label label="Premium Amount" value="[[password]]"></paper-input>
+  
+  <paper-input   always-float-label label="Monthly Premium" value="[[month]]"></paper-input>
+  <paper-input   always-float-label label="Name" value="[[Name]]"></paper-input>
+  <paper-input   always-float-label label="LastName" value="[[LastName]]"></paper-input>
+  
+</div>
     
     
         `;

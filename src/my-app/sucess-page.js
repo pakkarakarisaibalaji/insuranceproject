@@ -16,26 +16,23 @@ import '@polymer/paper-button/paper-button.js';
  * @customElement
  * @polymer
  */
-
- 
-
-class MyPolicy extends PolymerElement {
-  constructor () {
-    super ();
-
-
-  };
-
+class Sucesspage extends PolymerElement {
   static get template() {
     return html`
       <style>
       :host {
         display: block;
         height: 100%;
-        
+        color: var(--container-text, blue);
+        background-image: var(--container-background, "ins.jpg");
+      
+
       }
       .card{
-        width:97%;
+        width:50%;
+        position: relative;
+        
+        right: 6em;
         padding: 16px;
         color: #757575;
         border-radius: 5px;
@@ -43,10 +40,10 @@ class MyPolicy extends PolymerElement {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
       h1{
-      
+        margin: 16px 0;
         color: #212121;
         font-size: 22px;
-      
+        padding-left: 6em;
       }
       h5{
         margin: 16px 0;
@@ -58,18 +55,11 @@ class MyPolicy extends PolymerElement {
       padding-left: 20em;
     
       }
+      .center{
+        padding-left: 8em;
+      }
       paper-button.custom {
-        --paper-button-ink-color: var(--paper-pink-a200);
-        /* These could also be individually defined for each of the
-          specific css classes, but we'll just do it once as an example */
-        --paper-button-flat-keyboard-focus: {
-          background-color: var(--paper-pink-a200) !important;
-          color: white !important;
-        };
-        --paper-button-raised-keyboard-focus: {
-          background-color: var(--paper-pink-a200) !important;
-          color: white !important;
-        };
+        
       }
       paper-button.custom:hover {
         background-color: var(--paper-indigo-100);
@@ -97,33 +87,32 @@ class MyPolicy extends PolymerElement {
         color: white;
         background-color: bisque;
       }
-      td, th {
-        padding: 8px;
-        box-sizing: border-box;
-        white-space: nowrap;
-      }
-      /*media quiery for min-width-600px*/
-
+      /*media quiery for max-width-619px*/
       @media (max-width: 619px){
-      
         :host {
           display: block;
           height: 100%;
-          
+          color: var(--container-text, blue);
+          background-image: var(--container-background, "ins.jpg");
+        
+  
         }
         .card{
-          width:100%;
+          width:70%;
+          position: relative;
+          top: 6em;
           padding: 16px;
+          left:3em;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         h1{
-        
+
           color: #212121;
           font-size: 22px;
-        
+
         }
         h5{
           margin: 16px 0;
@@ -132,8 +121,82 @@ class MyPolicy extends PolymerElement {
           
         }
         .savings{
-        padding-left: 20em;
+        padding-left: 0em;
       
+        }
+        .center{
+          padding-left: 5em;
+        }
+        paper-button.custom {
+          
+          };
+        }
+        paper-button.custom:hover {
+          background-color: var(--paper-indigo-100);
+        }
+        paper-button.pink {
+          color: var(--paper-pink-a200);
+    
+        }
+        paper-button.indigo {
+          background-color: var(--paper-indigo-500);
+          color: white;
+          --paper-button-raised-keyboard-focus: {
+            background-color: var(--paper-pink-a200) !important;
+            color: white !important;
+          };
+        }
+        paper-button.green {
+          background-color: var(--paper-green-500);
+          color: white;
+        }
+        paper-button.green[active] {
+          background-color: var(--paper-red-500);
+        }
+        paper-button.disabled {
+          color: white;
+          background-color: bisque;
+        }
+      }
+      /*media quiery for min-width-600px*/
+      @media only screen and (min-width: 600px){
+        :host {
+          display: block;
+          height: 100%;
+          color: var(--container-text, blue);
+          background-image: var(--container-background, "ins.jpg");
+        
+  
+        }
+        .card{
+          width:70%;
+          position: relative;
+          top: 6em;
+          padding: 16px;
+          left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        h1{
+          margin: 16px 0;
+          color: #212121;
+          font-size: 22px;
+          padding-left: 4em;
+        }
+        h5{
+          margin: 16px 0;
+          color: #212121;
+          font-size: 12px;
+          
+        }
+        .savings{
+        padding-left: 0em;
+      
+        }
+        .center{
+          padding-left: 5em;
         }
         paper-button.custom {
           --paper-button-ink-color: var(--paper-pink-a200);
@@ -174,123 +237,28 @@ class MyPolicy extends PolymerElement {
           color: white;
           background-color: bisque;
         }
-        td, th {
-          padding: 8px;
-          box-sizing: border-box;
-          white-space: nowrap;
-        }
-      
+      }
       }
       </style>
+     
       <!--<routing></routing>-->
-
       <app-location route="{{route}}"></app-location>
-    
-    
+      <div class="card">
 
-<div class="card">
+      <!--<Header></Header>-->
+      <h1>Thanks for payment</h1>
+     
 
-<!--<Header></Header>-->
-
-<h1>My Policy</h1>
-
-<!--<table></table>-->
-
-<table is="s-table-lite" fixed-column>
-      <thead>
-        <tr>
-          <th>Policy no</th>
-          <th>Insurance Name</th>
-          <th>Premium</th>
-          <th>AnnualPremium</th>
-          
-        </tr>
-      </thead>
-      <tbody is="s-tbody">
-        <tr is="s-tr" multi>
-          <td>1011</td>
-          <td>Health Insurance</td>
-          <td>1200</td>
-          <td>100000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1012</td>
-          <td>Vehicle Insurance</td>
-          <td>1100</td>
-          <td>12000</td>
-         
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1013</td>
-          <td>Savings Traditional</td>
-          <td>1300</td>
-          <td>13000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1014</td>
-          <td>Medical Insurance</td>
-          <td>1400</td>
-          <td>14000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Personal Insurance</td>
-          <td>1500</td>
-          <td>15000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Long Term Savings</td>
-          <td>1600</td>
-          <td>16000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Retirement Plans</td>
-          <td>1700</td>
-          <td>17000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Savings Plans</td>
-          <td>1800</td>
-          <td>18000</td>
-          
-        </tr>
-        <tr is="s-tr" multi>
-          <td>1015</td>
-          <td>Child Savings</td>
-          <td>1900</td>
-          <td>19000</td>
-          
-        </tr>
-        
-        <tr is="s-tr" multi>
-          <td>1016</td>
-          <td>Savings plan</td>
-          <td>1000</td>
-          <td>10000</td>
-          
-        </tr>
-        
-        
-        
-      </tbody>
-    </table>
     </div>
     
         `;
   }
 
- 
- //<properties></properties>
+  //<login method></login method>
+  login(){
 
+  }
+//properties
   static get properties() {
     return {
       prop1: {
@@ -299,12 +267,17 @@ class MyPolicy extends PolymerElement {
       },
       username: {
         type: String,
-
+        value: ''
+      },
+      password: {
+        type: String,
+        value: ''
       },
       routeData: Object,
       subroute: Object
     };
   }
+
 }
 
-window.customElements.define('my-policy', MyPolicy);
+window.customElements.define('sucess-page', Sucesspage);

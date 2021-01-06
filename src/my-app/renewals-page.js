@@ -181,11 +181,24 @@ class Renewals extends PolymerElement {
       </template>
       </dom-repeat>
     
+      <div class="center">
+      <!--<paper-button></paper-button>-->
+<paper-button raised class="custom indigo" on-click="Paynow">Paynow
+</paper-button>
+</div>
+
+
     </div>
 
         `;
   }
   
+
+
+  Paynow(){    
+this.set('route.path', '/sucesspage');   
+  }
+
   //<properties></properties>
   static get properties() {
     return {

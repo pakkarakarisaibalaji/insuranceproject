@@ -78,6 +78,7 @@ class MyApp extends PolymerElement {
             <a name="renewalspage" href="[[rootPath]]renewalspage">Renewals</a>
             <a name="new-policy" href="[[rootPath]]new-policy">New Policy</a>
             <a name="loginpage" href="[[rootPath]]loginpage">LogOut</a>
+            <a name="sucesspage" href=[[rootpath]]sucesspage></a>
           </iron-selector>
         </app-drawer>
 
@@ -96,6 +97,7 @@ class MyApp extends PolymerElement {
             <renewals-page name="renewalspage"></renewals-page>
             <my-policy name="policy"></my-policy>
            <new-policy name="new-policy"></new-policy>
+           <sucess-page name="sucesspage"></sucess-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
@@ -126,7 +128,7 @@ class MyApp extends PolymerElement {
   
     if (!page) {
       this.page = 'loginpage';
-    } else if (['loginpage','renewalspage','policy','new-policy'].indexOf(page) !== -1) {
+    } else if (['loginpage','renewalspage','policy','new-policy','sucesspage'].indexOf(page) !== -1) {
       this.page = page;
     }
 
@@ -158,7 +160,9 @@ class MyApp extends PolymerElement {
             case 'new-policy':
             import('./new-policy.js');
             break;
-            
+            case 'sucesspage':
+            import('./sucess-page.js');
+            break;
     }
   }
 }
