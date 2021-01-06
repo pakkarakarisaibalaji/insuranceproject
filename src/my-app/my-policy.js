@@ -279,7 +279,22 @@ class MyPolicy extends PolymerElement {
           
         </tr>
         
+        <tr is="s-tr" multi>
+          <td>1017</td>
+          <td>Vechicle Insurance</td>
+          <td>2000</td>
+          <td>20000</td>
+          
+        </tr>
+ 
+        <tr is="s-tr" multi>
+        <td>1018</td>
+        <td>Medical Insurance</td>
+        <td>4000</td>
+        <td>40000</td>
         
+      </tr>
+
         
       </tbody>
     </table>
