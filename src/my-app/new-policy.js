@@ -12,6 +12,7 @@ import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
+import '@polymer/paper-card/paper-card.js';
 /**
  * @customElement
  * @polymer
@@ -52,45 +53,82 @@ class NewPolicy extends PolymerElement {
       .center{
         padding-left: 8em;
       }
-      
+      paper-button.custom {
+     
+      }
+      paper-button.custom:hover {
+        background-color: var(--paper-indigo-100);
+      }
+      paper-button.pink {
+        color: var(--paper-pink-a200);
+  
+      }
+      paper-button.indigo {
+        background-color: var(--paper-indigo-500);
+        color: white;
+        --paper-button-raised-keyboard-focus: {
+          background-color: var(--paper-pink-a200) !important;
+          color: white !important;
+        };
+      }
+      paper-button.green {
+        background-color: var(--paper-green-500);
+        color: white;
+      }
+      paper-button.green[active] {
+        background-color: var(--paper-red-500);
+      }
+      paper-button.disabled {
+        color: white;
+        background-color: bisque;
+      }
+    }
       </style>
      
       <!--<routing></routing>-->
       <app-location route="{{route}}"></app-location>
     
-      <paper-card heading="Health Insurance"  alt="Health Insurance">
+      <paper-card heading="Health Booster"  alt="Health Booster">
      
       <div class="card-content">
-      Health Insurance  Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
-      <paper-input  value="savings Traditional"></paper-input>
+      Top-up Health Insurance with the Health Booster Cover Secure yourself from surging medical costs and unexpected health issues with our Super TopUp Insurance, Health Booster. Because your health deserves more!
+      
       </div>
     <div class="card-actions">
-      <paper-button>Share</paper-button>
-      <paper-button>Explore!</paper-button>
+      <paper-button raised class="custom indigo">Buynow</paper-button>
+    
     </div>
      
     </paper-card>
 
 
-    <paper-card heading="Health Insurance"  alt="Health Insurance">
+    <paper-card heading="Home Insurance "  alt="Home Insurance">
      
     <div class="card-content">
-    Health Insurance  Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
-    <paper-input  value="savings Traditional"></paper-input>
+    Calamities come unannounced and can cause irreparable damage to your home and finances. With comprehensive home insurance, secure your home and its contents against natural calamities and stay rest assured.
+    
     </div>
   <div class="card-actions">
-    <paper-button>Share</paper-button>
-    <paper-button>Explore!</paper-button>
+    <paper-button raised class="custom indigo">Buynow</paper-button>
+    
   </div>
 
-  <div class="card-actions">
-    <paper-button>Share</paper-button>
-    <paper-button>Explore!</paper-button>
-  </div>
-   
   </paper-card>
 
         
+    <paper-card heading="Car Insurance "  alt="Car Insurance">
+     
+    <div class="card-content">
+    A motor insurance policy protects your motor vehicle from unforeseen risks and secures it against an accident or loss, theft and third party liabilities. A car owner pays yearly premiums to a motor insurance company, and the insurer pays the claim in case of any damage to the vehicle due to accident.
+    
+    </div>
+  <div class="card-actions">
+    <paper-button raised class="custom indigo">Buynow</paper-button>
+    
+  </div>
+
+  </paper-card>
+
     
         `;
   }
