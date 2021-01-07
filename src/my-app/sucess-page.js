@@ -29,10 +29,10 @@ class Sucesspage extends PolymerElement {
 
       }
       .card{
-        width:50%;
+        
         position: relative;
         
-        right: 6em;
+      
         padding: 16px;
         color: #757575;
         border-radius: 5px;
@@ -246,7 +246,7 @@ class Sucesspage extends PolymerElement {
       <div class="card">
 
       <!--<Header></Header>-->
-      <h1>Thanks for payment</h1>
+      <h1>Thank you</h1>
      
 
     </div>

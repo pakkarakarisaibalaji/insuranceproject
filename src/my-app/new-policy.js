@@ -88,14 +88,14 @@ class NewPolicy extends PolymerElement {
       <!--<routing></routing>-->
       <app-location route="{{route}}"></app-location>
     
-      <paper-card heading="Health Booster"  alt="Health Booster">
+      <paper-card heading="Health Insurance"  alt="Health Insurance">
      
       <div class="card-content">
-      Top-up Health Insurance with the Health Booster Cover Secure yourself from surging medical costs and unexpected health issues with our Super TopUp Insurance, Health Booster. Because your health deserves more!
+      Top-up Health Insurance with the Health Booster Cover Secure yourself from surging medical costs and unexpected health issues with our Super TopUp Insurance, Health Booster. Because your health deserves more! and premium 2,00,000
       
       </div>
     <div class="card-actions">
-      <paper-button raised class="custom indigo">Buynow</paper-button>
+      <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
     
     </div>
      
@@ -105,11 +105,11 @@ class NewPolicy extends PolymerElement {
     <paper-card heading="Home Insurance "  alt="Home Insurance">
      
     <div class="card-content">
-    Calamities come unannounced and can cause irreparable damage to your home and finances. With comprehensive home insurance, secure your home and its contents against natural calamities and stay rest assured.
+    Calamities come unannounced and can cause irreparable damage to your home and finances. With comprehensive home insurance, secure your home and its contents against natural calamities and stay rest assured and premium  upto 5,00,000
     
     </div>
   <div class="card-actions">
-    <paper-button raised class="custom indigo">Buynow</paper-button>
+    <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
     
   </div>
 
@@ -119,11 +119,11 @@ class NewPolicy extends PolymerElement {
     <paper-card heading="Car Insurance "  alt="Car Insurance">
      
     <div class="card-content">
-    A motor insurance policy protects your motor vehicle from unforeseen risks and secures it against an accident or loss, theft and third party liabilities. A car owner pays yearly premiums to a motor insurance company, and the insurer pays the claim in case of any damage to the vehicle due to accident.
+    A motor insurance policy protects your motor vehicle from unforeseen risks and secures it against an accident or loss, theft and third party liabilities. A car owner pays yearly premiums to a motor insurance company, and the insurer pays the claim in case of any damage to the vehicle due to accident and premium  upto 5,00,000
     
     </div>
   <div class="card-actions">
-    <paper-button raised class="custom indigo">Buynow</paper-button>
+    <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
     
   </div>
 
@@ -131,6 +131,10 @@ class NewPolicy extends PolymerElement {
 
     
         `;
+  }
+
+  Buynow() {
+    this.set('route.path', '/newform');   
   }
   
 //properties
