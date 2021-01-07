@@ -169,7 +169,7 @@ class Sucesspage extends PolymerElement {
   
         }
         .card{
-          width:70%;
+      
           position: relative;
           top: 6em;
           padding: 16px;

@@ -27,7 +27,11 @@ let profilesList = [
   {policyNo: 1017, Name: 'Retirement Plans', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
   {policyNo: 1018, Name: 'Savings Plans ', PremiumStatus: 'Pending', PremiumPending: 'Dec 2020'},
   {policyNo: 1019, Name: 'Child Savings', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
-  {policyNo: 1010, Name: 'Future plans', PremiumStatus: 'Pending', PremiumPending: 'Jan 2020'}
+  {policyNo: 1010, Name: 'Future plans', PremiumStatus: 'Pending', PremiumPending: 'Jan 2020'},
+  {policyNo: 1011, Name: 'Car Insurance', PremiumStatus: 'Up to date', PremiumPending: 'Jan 2020'},
+  {policyNo: 1012, Name: 'Home booster', PremiumStatus: 'Pending', PremiumPending: 'Apr 2020'},
+  {policyNo: 1013, Name: 'Life Insurance', PremiumStatus: 'Up to date', PremiumPending: 'Mar 2020'},
+  {policyNo: 1014, Name: 'Future plans', PremiumStatus: 'Pending', PremiumPending: 'Jan 2020'}
   
 ]
 
@@ -63,6 +67,9 @@ class Renewals extends PolymerElement {
       .savings{
       padding-left: 20em;
     
+      }
+      .center{
+        padding-left:5em;
       }
       paper-button.custom {
         --paper-button-ink-color: var(--paper-pink-a200);
