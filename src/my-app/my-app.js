@@ -12,7 +12,7 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-
+import '@polymer/iron-icon/iron-icon.js';
 
 //routing
 setPassiveTouchGestures(true);
@@ -89,7 +89,7 @@ class MyApp extends PolymerElement {
 
           <app-header  id="myheader" slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
-              <paper-icon-button icon="favorite" drawer-toggle=""></paper-icon-button>
+              <paper-icon-button src="src/assests/icon.jpg"  drawer-toggle=""></paper-icon-button>
               <div main-title="">Life Insurance</div>
             </app-toolbar>
           </app-header>
