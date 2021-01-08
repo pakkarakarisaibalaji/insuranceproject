@@ -203,7 +203,7 @@ class Renewals extends PolymerElement {
 
 
   Paynow(){    
-this.set('route.path', '/sucesspage');   
+this.set('route.path', '/payment');   
   }
 
   //<properties></properties>
