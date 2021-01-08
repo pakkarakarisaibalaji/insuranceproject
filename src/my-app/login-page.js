@@ -251,10 +251,9 @@ class LoginPage extends PolymerElement {
       
       <!--<paper-input></paper-input>-->
       
-      <paper-input always-float-label  min="1" 
-      max="10" auto-validate="true"  label="CustomerId" id="customer" value="{{username}}" required></paper-input>
+      <paper-input always-float-label  maxlength="15"  label="CustomerId" id="customer" value="{{username}}" required></paper-input>
       <paper-input type="password"  min="1" 
-      max="10" auto-validate="true" always-float-label label="Password" id="password" value="{{password}}" required></paper-input>
+      max="10" always-float-label label="Password" maxlength="10" id="password" value="{{password}}" required></paper-input>
       
       <span id="warning" style="display:none;color:red;">this user credentials is correct</span>
       

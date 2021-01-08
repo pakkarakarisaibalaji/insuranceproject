@@ -69,7 +69,7 @@ class Renewals extends PolymerElement {
     
       }
       .center{
-        padding-left:5em;
+        
       }
       paper-button.custom {
         --paper-button-ink-color: var(--paper-pink-a200);

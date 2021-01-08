@@ -34,7 +34,8 @@ class newForm extends PolymerElement {
       }
       .card{
         width:30%;
-        position: relative;        
+        position: relative;
+        left: 20em;        
         padding: 16px;
         color: #757575;
         border-radius: 5px;
@@ -274,27 +275,22 @@ class newForm extends PolymerElement {
    
 
 
-<paper-input always-float-label  min="1" 
-max="10" auto-validate="true"  label="Name" id="customer" value="[[username]]" required>
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Name" id="username" value="{{username}}" required>
 </paper-input>
 
-<paper-input always-float-label  min="1" 
-max="10" auto-validate="true"  label="Age" id="age" value="[[age]]" required>
-</paper-input>
-
-
-<paper-input always-float-label  min="1" 
-max="10" auto-validate="true"  label="Address" id="address" value="[[address]]" required>
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Age" id="age" value="{{age}}" required>
 </paper-input>
 
 
-<paper-input   min="1" 
-max="10" auto-validate="true" always-float-label label="Monthly Premium" id="premium" value="{{premium}}" required>
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Address" id="address" value="{{address}}" required>
 </paper-input>
 
 
-<paper-input   min="1" 
-max="10" auto-validate="true" always-float-label label=" Annual Premium" id="annpremium" value="{{premium}}" required>
+<paper-input  maxlength="10" auto-validate="true" always-float-label label="Monthly Premium" id="premium" value="{{premium}}" required>
+</paper-input>
+
+
+<paper-input  maxlength="10" auto-validate="true" always-float-label label=" Annual Premium" id="annpremium" value="{{premium}}" required>
 </paper-input>
 
       </form>
@@ -316,11 +312,43 @@ max="10" auto-validate="true" always-float-label label=" Annual Premium" id="ann
 
   //<login method></login method>
   submit(){
-    console.log('sai');
    
 
-    
+     var user1 = this.$.username.value;
+     var age = this.$.age.value;
+     var add     = this.$.address.value;
+     var mon = this.$.premium.value;
+     var ann = this.$.annpremium.value;
+this.$.warning.style.display="none";
+this.$.warning.innerText="";
+
+//<login condition></login condition>
+//validations
+   if(user1 == "saibalaji" && age == "28" && add=="banglore" && mon=="1000" && ann=="1000"){
+
 this.set('route.path', '/sucesspage');   
+ }
+//validations
+else {
+   this.$.warning.style.display = "block";
+   if(user1=="" &&  age=="" && add=="" && mon=="" && ann==""){
+ this.$.warning.innerText= "All fields are required";
+ 
+   }
+   else if(user1=="") {
+     this.$.warning.innerText= "customerid is required";
+   }
+   else if(age=="" ){
+     this.$.warning.innerText= "age is required";
+   }
+   else if(add=="" ){
+    this.$.warning.innerText= "address is required";
+  }
+  
+ }   
+
+    
+   
 }
 //validations
 
@@ -333,20 +361,26 @@ this.set('route.path', '/sucesspage');
       },
       username: {
         type: String,
-        value: '',
+        
         
       },
       age: {
           type: String,
-          value:'',
+        
       },
       address: {
           type:String,
-          value:''
+          
       },
       premium: {
         type: String,
-        value: '',
+      
+        notify:true
+
+      },
+      annpremium: {
+        type: String,
+      
         notify:true
 
       },

@@ -246,7 +246,7 @@ class Sucesspage extends PolymerElement {
       <div class="card">
 
       <!--<Header></Header>-->
-      <h1>Thank you</h1>
+      <h1>Thank you for choosing Life Insurance</h1>
      
 
     </div>

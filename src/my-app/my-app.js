@@ -34,6 +34,7 @@ class MyApp extends PolymerElement {
 
         app-drawer-layout:not([narrow]) [drawer-toggle] {
           display: none;
+      
         
         }
 
@@ -72,7 +73,7 @@ class MyApp extends PolymerElement {
 
       <app-drawer-layout fullbleed="" narrow="{{narrow}}">
         <!-- Drawer content -->
-        <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+        <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" >
           <app-toolbar>Life Insurance</app-toolbar>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="policy" href="[[rootPath]]policy">Policy</a>
