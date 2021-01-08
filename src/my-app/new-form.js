@@ -1,3 +1,16 @@
+/**
+ * import @polymer/app-layout/app-drawer/app-drawer.js;
+*import @polymer/app-layout/app-drawer-layout/app-drawer-layout.js;
+ * app-drawer-layout is layout 
+ *import @polymer/app-route/app-location.js;
+ * import @polymer/app-route/app-route.js; 
+ * app-route is used for routing 
+ 
+ */
+
+
+
+
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
 import '@polymer/app-layout/app-drawer/app-drawer.js';

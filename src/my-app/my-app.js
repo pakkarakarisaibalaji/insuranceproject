@@ -46,12 +46,6 @@ class MyApp extends PolymerElement {
   static get template() {
     return html`
 
-    /**
-     *<Style>
-     *</style>
-     *style tag with css properties
-     */
-    
       <style>
         :host {
           --app-primary-color: #4285f4;
@@ -93,10 +87,6 @@ class MyApp extends PolymerElement {
         }
       </style>
 
-      /**
-       *routing is done thorugh this
-       
-       */
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
       </app-location>
@@ -105,20 +95,13 @@ class MyApp extends PolymerElement {
       </app-route>
 
       
-      /**
-       *drawer layout will be there for layout
-       
-       */
 
 
       <app-drawer-layout fullbleed="" narrow="{{narrow}}">
         <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" >
           <app-toolbar>Life Insurance</app-toolbar>
-          /**
-           *iron selector will be there for selecting pages
-           
-           */
+          
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="policy" href="[[rootPath]]policy">Policy</a>
             <a name="renewalspage" href="[[rootPath]]renewalspage">Renewals</a>
@@ -130,10 +113,6 @@ class MyApp extends PolymerElement {
           </iron-selector>
         </app-drawer>
 
-        /**
-           *header component for header
-           
-           */
 
         <!-- Main content -->
         <app-header-layout has-scrolling-region="">
@@ -145,11 +124,6 @@ class MyApp extends PolymerElement {
             </app-toolbar>
           </app-header>
           
-
-          /**
-           *iron pages will have pages to select
-           
-           */
 
 
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
@@ -185,17 +159,12 @@ class MyApp extends PolymerElement {
       subroute: Object
     };
   }
-/**
-* observe is method or call or function 
-*/
+
   static get observers() {
     return [
       '_routePageChanged(routeData.page)'
     ];
   }
-/**
-* page links will be there in this 
-*/
   
   _routePageChanged(page) {
   
@@ -210,9 +179,7 @@ class MyApp extends PolymerElement {
       this.$.drawer.close();
     }
   }
-/**
-* routing is done based on pages with swtich cases
-*/
+
   routing(page) {
     // Import the page component on demand.
     

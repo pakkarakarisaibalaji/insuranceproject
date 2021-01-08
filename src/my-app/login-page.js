@@ -1,3 +1,13 @@
+/**
+ * import @polymer/app-layout/app-drawer/app-drawer.js;
+*import @polymer/app-layout/app-drawer-layout/app-drawer-layout.js;
+ * app-drawer-layout is layout 
+ *import @polymer/app-route/app-location.js;
+ * import @polymer/app-route/app-route.js; 
+ * app-route is used for routing 
+ 
+ */
+
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
 import '@polymer/app-layout/app-drawer/app-drawer.js';
@@ -199,12 +209,7 @@ class LoginPage extends PolymerElement {
           padding-left: 5em;
         }
         paper-button.custom {
-          --paper-button-ink-color: var(--paper-pink-a200);
-          /* These could also be individually defined for each of the
-            specific css classes, but we'll just do it once as an example */
-          --paper-button-flat-keyboard-focus: {
-            background-color: var(--paper-pink-a200) !important;
-            color: white !important;
+          
           };
           --paper-button-raised-keyboard-focus: {
             background-color: var(--paper-pink-a200) !important;

@@ -1,3 +1,15 @@
+/**
+ * import @polymer/app-layout/app-drawer/app-drawer.js;
+*import @polymer/app-layout/app-drawer-layout/app-drawer-layout.js;
+ * app-drawer-layout is layout 
+ *import @polymer/app-route/app-location.js;
+ * import @polymer/app-route/app-route.js; 
+ * app-route is used for routing 
+ 
+ */
+
+
+
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
 import '@polymer/app-layout/app-drawer/app-drawer.js';
@@ -175,14 +187,14 @@ class Renewals extends PolymerElement {
       <th>PremiumPending</th>
       </tr>
       </table>
-      <dom-repeat items="[[profiles]]">
+      <dom-repeat items="{{profiles}}">
         <template strip-whitespace="">
         
       <tr is="s-tr" multi>
-        <td>{{item.policyNo}}</td>
-        <td>{{item.Name}}</td>
-        <td>{{item.PremiumStatus}}</td>
-        <td>{{item.PremiumPending}}</td>
+        <td>[[item.policyNo]]</td>
+        <td>[[item.Name]]</td>
+        <td>[[item.PremiumStatus]]</td>
+        <td>[[item.PremiumPending]]</td>
         
       </tr>
       </template>
@@ -190,9 +202,9 @@ class Renewals extends PolymerElement {
     
       <div class="center">
       <!--<paper-button></paper-button>-->
-<paper-button raised class="custom indigo" on-click="Paynow">Paynow
-</paper-button>
-</div>
+        <paper-button raised class="custom indigo" on-click="Paynow">Paynow
+            </paper-button>
+      </div>
 
 
     </div>
@@ -213,15 +225,7 @@ this.set('route.path', '/payment');
         type: String,
         value: 'sai'
       },
-      username: {
-        type: String,
-        value: '',
-        notify:true
-      },
-      password: {
-        type: String,
-        value: ''
-      },
+      
       profiles: {
         type: Array,
         value: profilesList,
