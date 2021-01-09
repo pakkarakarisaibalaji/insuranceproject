@@ -1,28 +1,20 @@
 /**
- * import @polymer/app-layout/app-drawer/app-drawer.js;
-*import @polymer/app-layout/app-drawer-layout/app-drawer-layout.js;
- * app-drawer-layout is layout 
  *import @polymer/app-route/app-location.js;
  * import @polymer/app-route/app-route.js; 
  * app-route is used for routing 
- 
+ *import '@polymer/paper-button/paper-button.js';
+ *paper button is used for button
+ *import '@polymer/paper-input/paper-input.js';
+ *paper-input is used as input field
+ *import '@polymer/paper-card/paper-card.js';
+ *papercard is like card for para and button 
  */
-
 
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
-import '@polymer/iron-pages/iron-pages.js';
-import '@polymer/iron-selector/iron-selector.js';
-import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
 import '@polymer/paper-card/paper-card.js';
 /**
@@ -98,8 +90,11 @@ class NewPolicy extends PolymerElement {
       </style>
      
       <!--<routing></routing>-->
+
       <app-location route="{{route}}"></app-location>
     
+      <!--<paper-card></paper-card>-->
+
       <paper-card heading="Health Insurance"  alt="Health Insurance">
      
       <div class="card-content">
@@ -144,13 +139,18 @@ class NewPolicy extends PolymerElement {
     
         `;
   }
-
+/**
+ * buynow method
+ * 
+ * */
   Buynow() {
     this.set('route.path', '/newform');   
   }
   
-//properties
-
+/**
+ * properties
+ * 
+ * */
   static get properties() {
     return {
       
@@ -164,5 +164,8 @@ class NewPolicy extends PolymerElement {
     };
   }
 }
-
+/**window.customElements.define
+ * this is will register our component to browser
+ * 
+ * */
 window.customElements.define('new-policy', NewPolicy);

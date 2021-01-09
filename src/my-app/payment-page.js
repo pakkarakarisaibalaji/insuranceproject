@@ -5,23 +5,14 @@
  *import @polymer/app-route/app-location.js;
  * import @polymer/app-route/app-route.js; 
  * app-route is used for routing 
- 
+ *import '@polymer/paper-icon-button/paper-icon-button.js';
+*import '@polymer/iron-icon/iron-icon.js';
+ *Icons are used
  */
-
-
-
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
-import '@polymer/iron-pages/iron-pages.js';
-import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
 /**
@@ -282,7 +273,9 @@ class Payment extends PolymerElement {
         `;
   }
 
-  //<login method></login method>
+  /**
+   * <Payment></Payment>
+   * */
   Payment(){
     console.log('sai');
    
@@ -295,8 +288,9 @@ var cvv = this.$.CVV.value;
 this.$.warning.style.display="none";
 this.$.warning.innerText="";
 
-//<login condition></login condition>
-//validations
+
+/**validations
+ * */
 if(user1 == "123456789" && pass == "02/12" && cvv=="365" ){
 
     this.set('route.path', '/sucesspage');   
@@ -319,7 +313,9 @@ if(user1 == "123456789" && pass == "02/12" && cvv=="365" ){
       }
     }      
   }
-//properties
+/**properties
+ * 
+ * */
   static get properties() {
     return {
       prop1: {
@@ -344,5 +340,8 @@ if(user1 == "123456789" && pass == "02/12" && cvv=="365" ){
   }
 
 }
-
+/**window.customElements.define
+ * this is will register our component to browser
+ * 
+ * */
 window.customElements.define('payment-page', Payment);

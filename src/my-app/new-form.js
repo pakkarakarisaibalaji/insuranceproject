@@ -5,7 +5,17 @@
  *import @polymer/app-route/app-location.js;
  * import @polymer/app-route/app-route.js; 
  * app-route is used for routing 
- 
+ *import '@polymer/iron-pages/iron-pages.js';
+ *import '@polymer/iron-selector/iron-selector.js'; 
+ * iron-selector we will have pages to select 
+ * import '@polymer/iron-form/iron-form.js';
+ * Ironform is used for form 
+ * import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
+ * drop down
+ * import '@polymer/paper-item/paper-item.js';
+ * items in dropdown 
+ * import '@polymer/paper-listbox/paper-listbox.js';
+ * listbox which will hold items
  */
 
 
@@ -13,12 +23,6 @@
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
@@ -269,13 +273,14 @@ class newForm extends PolymerElement {
       <!--<Header></Header>-->
     
       
-      <!--<paper-input></paper-input>-->
+      <!--<ironform></ironform>-->
       
       <iron-form>
-      <form method="get" action="/form/handler">
+      <form >
   
     <h2>Form</h2>
-<!--<Insurername></Insurername>-->
+
+<!--<paperdropdown></paperdropdown>-->
 
 <paper-dropdown-menu label="Insurance" >
 <paper-listbox slot="dropdown-content" selected="0">
@@ -287,21 +292,27 @@ class newForm extends PolymerElement {
 </paper-dropdown-menu>
    
 
+<!--<paperinput></paperinput>-->
 
-<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Name" id="username" value="{{username}}" required>
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Name" id="username" value="[[username]]" required>
 </paper-input>
 
-<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Age" id="age" value="{{age}}" required>
+<!--<paperinput></paperinput>-->
+
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Age" id="age" value="[[age]]" required>
 </paper-input>
 
+<!--<paperinput></paperinput>-->
 
-<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Address" id="address" value="{{address}}" required>
+<paper-input always-float-label  maxlength="10" auto-validate="true"  label="Address" id="address" value="[[address]]" required>
 </paper-input>
 
+<!--<paperinput></paperinput>-->
 
 <paper-input  maxlength="10" auto-validate="true" always-float-label label="Monthly Premium" id="premium" value="{{premium}}" required>
 </paper-input>
 
+<!--<paperinput></paperinput>-->
 
 <paper-input  maxlength="10" auto-validate="true" always-float-label label=" Annual Premium" id="annpremium" value="{{premium}}" required>
 </paper-input>
@@ -323,10 +334,11 @@ class newForm extends PolymerElement {
         `;
   }
 
-  //<login method></login method>
+  /**submit
+ * submit method for form
+ * 
+ * */
   submit(){
-   
-
      var user1 = this.$.username.value;
      var age = this.$.age.value;
      var add     = this.$.address.value;
@@ -335,13 +347,16 @@ class newForm extends PolymerElement {
 this.$.warning.style.display="none";
 this.$.warning.innerText="";
 
-//<login condition></login condition>
-//validations
+/**<login condition></login condition>
+*/
+/**validations
+ * */
    if(user1 == "saibalaji" && age == "28" && add=="banglore" && mon=="1000" && ann=="1000"){
 
 this.set('route.path', '/sucesspage');   
  }
-//validations
+/**validations
+ * */
 else {
    this.$.warning.style.display = "block";
    if(user1=="" &&  age=="" && add=="" && mon=="" && ann==""){
@@ -363,15 +378,13 @@ else {
     
    
 }
-//validations
 
-//properties
+
+/**properties
+ * */
   static get properties() {
     return {
-      prop1: {
-        type: String,
-        value: 'sai'
-      },
+     
       username: {
         type: String,
         
@@ -403,5 +416,6 @@ else {
   }
 
 }
-
+/**window.customElements.define
+ * */
 window.customElements.define('new-form', newForm);

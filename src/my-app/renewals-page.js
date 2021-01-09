@@ -1,33 +1,26 @@
 /**
- * import @polymer/app-layout/app-drawer/app-drawer.js;
-*import @polymer/app-layout/app-drawer-layout/app-drawer-layout.js;
- * app-drawer-layout is layout 
  *import @polymer/app-route/app-location.js;
  * import @polymer/app-route/app-route.js; 
  * app-route is used for routing 
- 
+ **import '@polymer/paper-button/paper-button.js';
+ *paper button is used for button
+ *import '@polymer/paper-button/paper-button.js';
+ *paper button is used for button
+ *import '@polymer/paper-input/paper-input.js';
+ *paper-input is used as input field
  */
 
 
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@polymer/paper-input/paper-input';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
-import '@polymer/iron-pages/iron-pages.js';
-import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
-import './my-policy.js';
-/**
- * @customElement
- * @polymer
+
+ /**
+ * @Array
+ * 
  */
 let profilesList = [
   {policyNo: 1011, Name: 'Health Insurance', PremiumStatus: 'Up to date', PremiumPending: 'N/A'},
@@ -46,6 +39,12 @@ let profilesList = [
   {policyNo: 1014, Name: 'Future plans', PremiumStatus: 'Pending', PremiumPending: 'Jan 2020'}
   
 ]
+
+/**
+ * @customElement
+ * @polymer
+ */
+
 
 class Renewals extends PolymerElement {
   static get template() {
@@ -181,12 +180,16 @@ class Renewals extends PolymerElement {
 
     <table>
       <tr>
+      <!--<tableheader></tableheader>-->
       <th>Policy</th>
       <th>Insurance</th>
       <th>PremiumStatus</th>
       <th>PremiumPending</th>
       </tr>
       </table>
+
+      <!--<tabledata></tabledata>-->
+      
       <dom-repeat items="{{profiles}}">
         <template strip-whitespace="">
         
@@ -202,30 +205,32 @@ class Renewals extends PolymerElement {
     
       <div class="center">
       <!--<paper-button></paper-button>-->
-        <paper-button raised class="custom indigo" on-click="Paynow">Paynow
-            </paper-button>
+       
+      <paper-button raised class="custom indigo" on-click="Paynow">Paynow
+      </paper-button>
       </div>
 
 
-    </div>
+       </div>
 
         `;
   }
   
-
+/**
+ * paynow method
+ * 
+ * */
 
   Paynow(){    
 this.set('route.path', '/payment');   
   }
 
-  //<properties></properties>
-  static get properties() {
+/**
+ * properties
+ * 
+ * */
+static get properties() {
     return {
-      prop1: {
-        type: String,
-        value: 'sai'
-      },
-      
       profiles: {
         type: Array,
         value: profilesList,
@@ -236,5 +241,8 @@ this.set('route.path', '/payment');
     };
   }
 }
-
+/**window.customElements.define
+ * this is will register our component to browser
+ * 
+ * */
 window.customElements.define('renewals-page', Renewals);

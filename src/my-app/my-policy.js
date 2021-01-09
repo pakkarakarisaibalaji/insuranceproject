@@ -13,19 +13,9 @@
 
 
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@polymer/paper-input/paper-input';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
-import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
-import '@polymer/iron-pages/iron-pages.js';
-import '@polymer/iron-selector/iron-selector.js';
-import '@polymer/paper-icon-button/paper-icon-button.js';
-import '@polymer/paper-button/paper-button.js';
+
 /**
  * @customElement
  * @polymer
@@ -210,7 +200,10 @@ class MyPolicy extends PolymerElement {
 
 <!--<table></table>-->
 
-<table is="s-table-lite" fixed-column>
+<table  fixed-column>
+
+<!--<tableheader></tableheader>-->
+
       <thead>
         <tr>
           <th>Policy no</th>
@@ -220,64 +213,67 @@ class MyPolicy extends PolymerElement {
           
         </tr>
       </thead>
-      <tbody is="s-tbody">
-        <tr is="s-tr" multi>
+      <tbody >
+
+      <!--<tabledata></tabledata>-->
+
+      <tr >
           <td>1011</td>
           <td>Health Insurance</td>
           <td>1200</td>
           <td>100000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1012</td>
           <td>Vehicle Insurance</td>
           <td>1100</td>
           <td>12000</td>
          
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1013</td>
           <td>Savings Traditional</td>
           <td>1300</td>
           <td>13000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1014</td>
           <td>Medical Insurance</td>
           <td>1400</td>
           <td>14000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1015</td>
           <td>Personal Insurance</td>
           <td>1500</td>
           <td>15000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1015</td>
           <td>Long Term Savings</td>
           <td>1600</td>
           <td>16000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1015</td>
           <td>Retirement Plans</td>
           <td>1700</td>
           <td>17000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1015</td>
           <td>Savings Plans</td>
           <td>1800</td>
           <td>18000</td>
           
         </tr>
-        <tr is="s-tr" multi>
+        <tr >
           <td>1015</td>
           <td>Child Savings</td>
           <td>1900</td>
@@ -285,7 +281,7 @@ class MyPolicy extends PolymerElement {
           
         </tr>
         
-        <tr is="s-tr" multi>
+        <tr >
           <td>1016</td>
           <td>Savings plan</td>
           <td>1000</td>
@@ -293,7 +289,7 @@ class MyPolicy extends PolymerElement {
           
         </tr>
         
-        <tr is="s-tr" multi>
+        <tr >
           <td>1017</td>
           <td>Vechicle Insurance</td>
           <td>2000</td>
@@ -301,7 +297,7 @@ class MyPolicy extends PolymerElement {
           
         </tr>
  
-        <tr is="s-tr" multi>
+        <tr >
         <td>1018</td>
         <td>Medical Insurance</td>
         <td>4000</td>
@@ -318,22 +314,20 @@ class MyPolicy extends PolymerElement {
   }
 
  
- //<properties></properties>
-
+/**properties
+ * 
+ * */
   static get properties() {
     return {
-      prop1: {
-        type: String,
-        value: 'sai'
-      },
-      username: {
-        type: String,
-
-      },
+      
+      
       routeData: Object,
       subroute: Object
     };
   }
 }
-
+/**window.customElements.define
+ * this is will register our component to browser
+ * 
+ * */
 window.customElements.define('my-policy', MyPolicy);

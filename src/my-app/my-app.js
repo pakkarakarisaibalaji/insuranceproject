@@ -10,7 +10,7 @@
  * iron-selector we will have pages to select 
  *import '@polymer/paper-icon-button/paper-icon-button.js';
 *import '@polymer/iron-icon/iron-icon.js';
- *Icons are used 
+ *Icons are used
  */
 
 
@@ -27,7 +27,6 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-import '@polymer/iron-icon/iron-icon.js';
 
 /**
  *passivetouches
@@ -179,9 +178,11 @@ class MyApp extends PolymerElement {
       this.$.drawer.close();
     }
   }
-
+/**
+ * switch case with import the page compoent
+ * 
+ * */
   routing(page) {
-    // Import the page component on demand.
     
     this.$.drawer.style.display = 'block';
     this.$.myheader.style.display = 'block';
@@ -213,5 +214,8 @@ class MyApp extends PolymerElement {
     }
   }
 }
-
+/**window.customElements.define
+ * this is will register our component to browser
+ * 
+ * */
 window.customElements.define('my-app', MyApp);
