@@ -45,7 +45,7 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
       :host {
         display: block;
         height: 100%;
-        color: var(--container-text, blue);
+        color: var(--container-text);
         background-image: var(--container-background, "ins.jpg");
       
 
@@ -86,6 +86,48 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
       .center{
         padding-left: 8em;
       }
+      .center1{
+        padding-left: 0em;
+      }
+      .card1{
+        width:97%%;
+        padding: 16px;
+        color: #757575;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .card2{
+        width:30%;
+        position: relative;
+        left: 20em;        
+        padding: 16px;
+        color: #757575;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .card3{
+      
+        position: relative;
+        padding: 16px;
+        left:0em;
+        color: #757575;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .header1{
+      
+        color: #212121;
+        font-size: 22px;
+        margin: 16px 0;
+        padding-left: 0em;
+      
+      }
+      paper-dropdown-menu {
+        width: 21em;
+    }
       paper-button.custom {
         
       }
@@ -120,7 +162,7 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         :host {
           display: block;
           height: 100%;
-          color: var(--container-text, blue);
+          color: var(--container-text);
           background-image: var(--container-background, "ins.jpg");
         
   
@@ -131,6 +173,29 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
           top: 6em;
           padding: 16px;
           left:3em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .card2{
+          width:70%;
+          position: relative;
+          top: 6em;
+          padding: 16px;
+          left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .card3{
+      
+          position: relative;
+          padding: 16px;
+          left:0em;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
@@ -154,6 +219,25 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         }
         .center{
           padding-left: 5em;
+        }
+        .card1{
+          width:97%;
+          padding: 16px;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .header1{
+        
+          color: #212121;
+          font-size: 22px;
+          margin: 16px 0;
+         padding-left: 0em;
+        
+        }
+        .center1{
+          padding-left: 0em;
         }
         paper-button.custom {
           
@@ -196,7 +280,7 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         :host {
           display: block;
           height: 100%;
-          color: var(--container-text, blue);
+          color: var(--container-text);
           background-image: var(--container-background, "ins.jpg");
         
   
@@ -211,6 +295,43 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
           border-radius: 5px;
           background-color: #fff;
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .card1{
+          width:97%;
+          padding: 16px;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .card2{
+          width:70%;
+          position: relative;
+          top: 6em;
+          padding: 16px;
+          left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .card3{
+      
+          position: relative;
+          padding: 16px;
+          left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .header1{
+        
+          color: #212121;
+          font-size: 22px;
+          margin: 16px 0;
+        
+          padding-left: 0em;
         }
         h1{
           margin: 16px 0;
@@ -230,6 +351,9 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         }
         .center{
           padding-left: 5em;
+        }
+        .center1{
+          padding-left: 0em;
         }
         paper-button.custom {
           
