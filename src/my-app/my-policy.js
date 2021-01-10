@@ -22,7 +22,28 @@ import './styles-global.js';
  * @polymer
  */
 
- 
+  /**
+ * @Array
+ * 
+ */
+let Policy = [
+  {policyNo: 1011, Name: 'Health Insurance', MonthlyPremium: '1000', AnnualPremium: '100000'},
+  {policyNo: 1012, Name: 'Vehicle Insurance', MonthlyPremium: '2000', AnnualPremium: '200000'},
+  {policyNo: 1013, Name: 'Savings Traditional', MonthlyPremium: '3000', AnnualPremium: '300000'},
+  {policyNo: 1014, Name: 'Medical Insurance', MonthlyPremium: '4000', AnnualPremium: '400000'},
+  {policyNo: 1015, Name: 'Personal Insurance', MonthlyPremium: '5000', AnnualPremium: '500000'},
+  {policyNo: 1016, Name: 'Long Term Savings', MonthlyPremium: '6000', AnnualPremium: '600000'},
+  {policyNo: 1017, Name: 'Retirement Plans', MonthlyPremium: '7000', AnnualPremium: '700000'},
+  {policyNo: 1018, Name: 'Savings Plans ', MonthlyPremium: '8000', AnnualPremium: '800000'},
+  {policyNo: 1019, Name: 'Child Savings', MonthlyPremium: '9000', AnnualPremium: '900000'},
+  {policyNo: 1010, Name: 'Future plans', MonthlyPremium: '10000', AnnualPremium: '1000000'},
+  {policyNo: 1011, Name: 'Car Insurance', MonthlyPremium: '11000', AnnualPremium: '1100000'},
+  {policyNo: 1012, Name: 'Home booster', MonthlyPremium: '12000', AnnualPremium: '1200000'},
+  {policyNo: 1013, Name: 'Life Insurance', MonthlyPremium: '13000', AnnualPremium: '1300000'},
+  {policyNo: 1014, Name: 'Future plans', MonthlyPremium: '14000', AnnualPremium: '1400000'}
+  
+]
+
 
 class MyPolicy extends PolymerElement {
   constructor () {
@@ -56,108 +77,31 @@ class MyPolicy extends PolymerElement {
 
       <thead>
         <tr>
-          <th>Policy no</th>
-          <th>Insurance Name</th>
+          <th>Policyno</th>
+          <th>Insurance</th>
           <th>Premium</th>
           <th>AnnualPremium</th>
           
         </tr>
       </thead>
-      <tbody >
-
-      <!--<tabledata></tabledata>-->
-
-      <tr >
-          <td>1011</td>
-          <td>Health Insurance</td>
-          <td>1200</td>
-          <td>100000</td>
-          
-        </tr>
-        <tr >
-          <td>1012</td>
-          <td>Vehicle Insurance</td>
-          <td>1100</td>
-          <td>12000</td>
-         
-        </tr>
-        <tr >
-          <td>1013</td>
-          <td>Savings Traditional</td>
-          <td>1300</td>
-          <td>13000</td>
-          
-        </tr>
-        <tr >
-          <td>1014</td>
-          <td>Medical Insurance</td>
-          <td>1400</td>
-          <td>14000</td>
-          
-        </tr>
-        <tr >
-          <td>1015</td>
-          <td>Personal Insurance</td>
-          <td>1500</td>
-          <td>15000</td>
-          
-        </tr>
-        <tr >
-          <td>1015</td>
-          <td>Long Term Savings</td>
-          <td>1600</td>
-          <td>16000</td>
-          
-        </tr>
-        <tr >
-          <td>1015</td>
-          <td>Retirement Plans</td>
-          <td>1700</td>
-          <td>17000</td>
-          
-        </tr>
-        <tr >
-          <td>1015</td>
-          <td>Savings Plans</td>
-          <td>1800</td>
-          <td>18000</td>
-          
-        </tr>
-        <tr >
-          <td>1015</td>
-          <td>Child Savings</td>
-          <td>1900</td>
-          <td>19000</td>
-          
-        </tr>
-        
-        <tr >
-          <td>1016</td>
-          <td>Savings plan</td>
-          <td>1000</td>
-          <td>10000</td>
-          
-        </tr>
-        
-        <tr >
-          <td>1017</td>
-          <td>Vechicle Insurance</td>
-          <td>2000</td>
-          <td>20000</td>
-          
-        </tr>
- 
-        <tr >
-        <td>1018</td>
-        <td>Medical Insurance</td>
-        <td>4000</td>
-        <td>40000</td>
-        
-      </tr>
-
-        
-      </tbody>
+     
     </table>
+    
+    <!--<tabledata></tabledata>-->
+      
+    <dom-repeat items="{{Policy}}">
+      <template >
+      
+    <tr>
+      <td>[[item.policyNo]]</td>
+      <td>[[item.Name]]</td>
+      <td>[[item.MonthlyPremium]]</td>
+      <td>[[item.AnnualPremium]]</td>
+      
+    </tr>
+    </template>
+    </dom-repeat>
+  
     </div>
     
         `;
@@ -170,7 +114,10 @@ class MyPolicy extends PolymerElement {
   static get properties() {
     return {
       
-      
+      Policy: {
+        type: Array,
+        value: Policy,
+      },
       routeData: Object,
       subroute: Object
     };

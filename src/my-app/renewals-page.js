@@ -120,7 +120,7 @@ static get properties() {
       profiles: {
         type: Array,
         value: profilesList,
-        notify: true
+        
       },
       routeData: Object,
       subroute: Object
