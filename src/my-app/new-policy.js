@@ -41,7 +41,7 @@ class NewPolicy extends PolymerElement {
       
       </div>
     <div class="card-actions">
-      <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
+      <paper-button raised class="custom indigo" on-click="Buynow">Buy now</paper-button>
     
     </div>
      
@@ -55,7 +55,7 @@ class NewPolicy extends PolymerElement {
     
     </div>
   <div class="card-actions">
-    <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
+    <paper-button raised class="custom indigo" on-click="Buynow">Buy now</paper-button>
     
   </div>
 
@@ -69,7 +69,7 @@ class NewPolicy extends PolymerElement {
     
     </div>
   <div class="card-actions">
-    <paper-button raised class="custom indigo" on-click="Buynow">Buynow</paper-button>
+    <paper-button raised class="custom indigo" on-click="Buy now">Buynow</paper-button>
     
   </div>
 

@@ -80,7 +80,7 @@ this.$.warning.innerText="";
  
  *  */
     if(user1 == "123456789" && pass == "name"){
-localStorage.setItem("username",user1);
+//localStorage.setItem("username",user1);
 this.$.customer.value="";
 this.$.password.value="";
 this.set('route.path', '/policy');   

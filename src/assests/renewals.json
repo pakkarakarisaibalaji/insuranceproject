@@ -1,0 +1,23 @@
+{"renewals":[
+
+
+
+
+    {"policyNo": 1011, "Name": "Health Insurance", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1012, "Name": "Vehicle Insurance", "PremiumStatus": "Pending", "PremiumPending": "June 2020"},
+  {"policyNo": 1013, "Name": "Savings Traditional", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1014, "Name": "Medical Insurance", "PremiumStatus": "Pending", "PremiumPending": "Oct 2020"},
+  {"policyNo": 1015, "Name": "Personal Insurance", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1016, "Name": "Long Term Savings", "PremiumStatus": "Pending", "PremiumPending": "Nov 2020"},
+  {"policyNo": 1017, "Name": "Retirement Plans", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1018, "Name": "Savings Plans", "PremiumStatus": "Pending", "PremiumPending": "Dec 2020"},
+  {"policyNo": 1019, "Name": "Child Savings", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1010, "Name": "Future plans", "PremiumStatus": "Pending", "PremiumPending": "Jan 2020"},
+  {"policyNo": 1011, "Name": "Car Insurance", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1012, "Name": "Home booster", "PremiumStatus": "Pending", "PremiumPending": "Apr 2020"},
+  {"policyNo": 1013, "Name": "Life Insurance", "PremiumStatus": "Up to date", "PremiumPending": "N/A"},
+  {"policyNo": 1014, "Name": "Future plans", "PremiumStatus": "Pending", "PremiumPending": "Jan 2020"}
+    
+    
+    ]
+    }

@@ -16,6 +16,9 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-button/paper-button.js';
 import './styles-global.js';
+import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
+import '@polymer/paper-item/paper-item.js';
+import '@polymer/paper-listbox/paper-listbox.js';
 /**
  * @customElement
  * @polymer
@@ -24,17 +27,36 @@ class Payment extends PolymerElement {
   static get template() {
     return html`
       <style include="styles-global">
-      
+      #drop{
+        width:50px;
+      }
       </style>
      
       <!--<routing></routing>-->
       <app-location route="{{route}}"></app-location>
       <div class="savings">
-      <div class="card">
-
+      <div class="card4">
+      <iron-form>
+      <form >
+  
       <!--<Header></Header>-->
-      <h1>Payment Gateway</h1>
-      
+      <h2>Payment Gateway</h2>
+     
+      <paper-dropdown-menu label="Insurance Name" id="drop">
+<paper-listbox slot="dropdown-content" selected="0">
+  <paper-item></paper-item>
+  <paper-item>Car Insurance</paper-item>
+  <paper-item>Home Insurance</paper-item>
+  <paper-item>Health Insurance</paper-item>
+  <paper-item>Savings Traditional"</paper-item>
+  <paper-item>Personal Insurance</paper-item>
+  <paper-item>Long Term Savings</paper-item>
+  <paper-item>Retirement Plans</paper-item>
+  <paper-item>Savings Plans</paper-item>
+  <paper-item>Car Insurance/paper-item>
+</paper-listbox>
+</paper-dropdown-menu>
+
       <!--<paper-input></paper-input>-->
       
       <paper-input always-float-label  maxlength="15"  label="Cardno" id="Cardno" value="{{username}}" required></paper-input>
@@ -42,8 +64,9 @@ class Payment extends PolymerElement {
       <paper-input always-float-label label="CVV" maxlength="3" id="CVV" value="{{CVV}}" required></paper-input>
       
       <span id="warning" style="display:none;color:red;">this user credentials is correct</span>
-      
-      <div class="center">
+      </form>
+    </iron-form>
+      <div class="center2">
       <!--<paper-button></paper-button>-->
 <paper-button raised class="custom indigo" on-click="Payment">Make Payment
 </paper-button>
@@ -100,10 +123,7 @@ if(user1 == "123456789" && pass == "02/12" && cvv=="365" ){
  * */
   static get properties() {
     return {
-      prop1: {
-        type: String,
-        value: 'sai'
-      },
+      
       Cardno: {
         type: Number,
         value: ''

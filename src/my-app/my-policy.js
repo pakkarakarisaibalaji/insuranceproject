@@ -16,6 +16,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import './styles-global.js';
+import '@polymer/iron-ajax/iron-ajax.js';
 
 /**
  * @customElement
@@ -26,23 +27,6 @@ import './styles-global.js';
  * @Array
  * 
  */
-let Policy = [
-  {policyNo: 1011, Name: 'Health Insurance', MonthlyPremium: '1000', AnnualPremium: '100000'},
-  {policyNo: 1012, Name: 'Vehicle Insurance', MonthlyPremium: '2000', AnnualPremium: '200000'},
-  {policyNo: 1013, Name: 'Savings Traditional', MonthlyPremium: '3000', AnnualPremium: '300000'},
-  {policyNo: 1014, Name: 'Medical Insurance', MonthlyPremium: '4000', AnnualPremium: '400000'},
-  {policyNo: 1015, Name: 'Personal Insurance', MonthlyPremium: '5000', AnnualPremium: '500000'},
-  {policyNo: 1016, Name: 'Long Term Savings', MonthlyPremium: '6000', AnnualPremium: '600000'},
-  {policyNo: 1017, Name: 'Retirement Plans', MonthlyPremium: '7000', AnnualPremium: '700000'},
-  {policyNo: 1018, Name: 'Savings Plans ', MonthlyPremium: '8000', AnnualPremium: '800000'},
-  {policyNo: 1019, Name: 'Child Savings', MonthlyPremium: '9000', AnnualPremium: '900000'},
-  {policyNo: 1010, Name: 'Future plans', MonthlyPremium: '10000', AnnualPremium: '1000000'},
-  {policyNo: 1011, Name: 'Car Insurance', MonthlyPremium: '11000', AnnualPremium: '1100000'},
-  {policyNo: 1012, Name: 'Home booster', MonthlyPremium: '12000', AnnualPremium: '1200000'},
-  {policyNo: 1013, Name: 'Life Insurance', MonthlyPremium: '13000', AnnualPremium: '1300000'},
-  {policyNo: 1014, Name: 'Future plans', MonthlyPremium: '14000', AnnualPremium: '1400000'}
-  
-]
 
 
 class MyPolicy extends PolymerElement {
@@ -54,56 +38,156 @@ class MyPolicy extends PolymerElement {
 
   static get template() {
     return html`
-      <style include="styles-global">
-     
+      <style >
+           
+      .center-width{
+        width:40%;
+        margin:0 auto;
+      }
+      .card{
+        background: #fff;
+        border: 1px solid #e4e9f0;
+        width: 90%;
+        
+    
+    }
+      .bg-clr{
+        background: #f1f7fa;
+        padding: 2em;
+        font-family: 'Roboto';
+       }
+
+       .pad-table{
+        padding:20px;
+      }
+      .pad-table p{
+          border: 1px solid #ccc;
+          margin: 0;
+          border-bottom: none;
+          padding: 15px 15px 45px;
+          font-size: 20px;
+          font-family: 'Roboto';
+      }
+
+      td, th {
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        padding: 14px;
+      }
+
+      .pad-table{
+        padding:20px;
+      }
+      .pad-table p{
+          border: 1px solid #ccc;
+          margin: 0;
+          border-bottom: none;
+          padding: 15px 15px 45px;
+          font-size: 20px;
+          font-family: 'Roboto';
+      }
+     .center-box{
+       width:80%;
+       margin:0 auto;
+     }
+      .card{
+        background: #fff;
+        border: 1px solid #e4e9f0;
+        width: 69em;
+      
+    
+    }
+      .container-box{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-flow: wrap;
+      }
+      .box{
+          width: 13%;
+          height: 100px;
+          background: yellow;
+          margin: 20px;
+          box-sizing: border-box;
+          font-size: 16px;
+          margin-bottom: 60px;
+          text-align: center;
+      }
+      
+      
+      
+        .head-tr,.head-tr:hover{
+          background: #9370DB;
+          color: #fff;
+        }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+    
+        td, th {
+          border-bottom: 1px solid #dddddd;
+          text-align: left;
+          padding: 14px;
+        }
+        .bg-color{
+          background: #cccccc1a;
+        }
       </style>
       <!--<routing></routing>-->
 
       <app-location route="{{route}}"></app-location>
     
-    
+  <div class="card">  
+      <div class="bg-color">
 
-<div class="card1">
+      <!--<ironajax></ironajax>-->
 
-<!--<Header></Header>-->
+      <iron-ajax
+    auto
+   
+    url="src/assests/data.json"
+   
+    handle-as="json"
+    on-response="handleDataResponse"
+   >
+  </iron-ajax>
 
-<h1 class="header1">My Policy</h1>
+  
 
-<!--<table></table>-->
-
-<table  fixed-column>
-
-<!--<tableheader></tableheader>-->
-
-      <thead>
-        <tr>
-          <th>Policyno</th>
-          <th>Insurance</th>
-          <th>Premium</th>
-          <th>AnnualPremium</th>
+    <h1>My Policy</h1>
+      <table>
+        <thead>
+            <tr class="head-tr">
+                <th>policyNo</th>
+                <th>Name</th>
+                <th>MonthlyPremium</th>
+                <th>AnnualPremium</th>
+                
+            </tr>
+        </thead>
           
-        </tr>
-      </thead>
-     
+        <tbody>
+            <!-- dom-repate used to iterate an array values from iron-jax respose -->
+            <template is="dom-repeat" items="{{data}}">
+                <tr>
+                    <td>[[item.policyNo]]</td>
+                    <td>[[item.Name]]</td>
+                    <td>₹[[item.MonthlyPremium]]</td>
+                    <td>₹[[item.AnnualPremium]]</td>
+                    
+                </tr>
+            </template>
+        </tbody>
     </table>
     
-    <!--<tabledata></tabledata>-->
-      
-    <dom-repeat items="{{Policy}}">
-      <template >
-      
-    <tr>
-      <td>[[item.policyNo]]</td>
-      <td>[[item.Name]]</td>
-      <td>[[item.MonthlyPremium]]</td>
-      <td>[[item.AnnualPremium]]</td>
-      
-    </tr>
-    </template>
-    </dom-repeat>
-  
-    </div>
-    
+
+</div>
+</div>
+</div>
         `;
   }
 
@@ -114,13 +198,17 @@ class MyPolicy extends PolymerElement {
   static get properties() {
     return {
       
-      Policy: {
+      data: {
         type: Array,
-        value: Policy,
+        value: []
       },
-      routeData: Object,
-      subroute: Object
+     
     };
+  }
+
+  handleDataResponse(event, request){
+    var response = request.response;  
+    this.data = response.sdata;
   }
 }
 /**window.customElements.define

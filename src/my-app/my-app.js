@@ -58,10 +58,17 @@ class MyApp extends PolymerElement {
       
         
         }
-
+        app-drawer {
+          color: #fff;
+          --app-drawer-scrim-background: rgba(0, 0, 100, 0.8);
+          --app-drawer-content-container: {
+            background: #20B2AA;
+          }
+          
+        }
         app-header {
           color: #fff;
-          background-color: var(--app-primary-color);
+          background-color: #9370DB;
         }
 
         app-header paper-icon-button {
@@ -78,10 +85,11 @@ class MyApp extends PolymerElement {
           text-decoration: none;
           color: var(--app-secondary-color);
           line-height: 40px;
+          
         }
 
         .drawer-list a.iron-selected {
-          color: black;
+          color: white;
           font-weight: bold;
         }
       </style>
