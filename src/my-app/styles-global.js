@@ -140,6 +140,12 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
       paper-dropdown-menu {
         width: 21em;
     }
+    paper-dropdown-menu {
+      --paper-dropdown-menu: {
+        left:0 !important;
+        width:100% !important;
+      } 
+  }
       paper-button.custom {
         
       }
@@ -197,7 +203,7 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
           position: relative;
           top: 6em;
           padding: 16px;
-          left:0em;
+          left:3em;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
@@ -208,6 +214,18 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
           position: relative;
           padding: 16px;
           left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        .card4{
+      
+      
+          left:2em;
+          width:82%;
+          position: relative;
+          padding: 16px;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
@@ -257,6 +275,12 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         .center1{
           padding-left: 0em;
         }
+        paper-dropdown-menu {
+          --paper-dropdown-menu: {
+            left:0 !important;
+            width:100% !important;
+          } 
+      }
         paper-button.custom {
           
           };
@@ -327,17 +351,30 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
           position: relative;
           top: 6em;
           padding: 16px;
-          left:0em;
+          left:3em;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         .card3{
-      
+        
           position: relative;
           padding: 16px;
           left:0em;
+          color: #757575;
+          border-radius: 5px;
+          background-color: #fff;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .card4{
+      
+      
+          left:2em;
+          width:80%;
+          position: relative;
+          padding: 16px;
           color: #757575;
           border-radius: 5px;
           background-color: #fff;
@@ -373,6 +410,12 @@ $_documentContainer.innerHTML = `<dom-module id="styles-global">
         .center1{
           padding-left: 0em;
         }
+        paper-dropdown-menu {
+          --paper-dropdown-menu: {
+            left:0 !important;
+            width:100% !important;
+          } 
+      }
         paper-button.custom {
           
           };

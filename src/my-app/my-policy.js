@@ -44,30 +44,7 @@ class MyPolicy extends PolymerElement {
         width:40%;
         margin:0 auto;
       }
-      .card{
-        background: #fff;
-        border: 1px solid #e4e9f0;
-        width: 90%;
-        
-    
-    }
-      .bg-clr{
-        background: #f1f7fa;
-        padding: 2em;
-        font-family: 'Roboto';
-       }
-
-       .pad-table{
-        padding:20px;
-      }
-      .pad-table p{
-          border: 1px solid #ccc;
-          margin: 0;
-          border-bottom: none;
-          padding: 15px 15px 45px;
-          font-size: 20px;
-          font-family: 'Roboto';
-      }
+     
 
       td, th {
         border-bottom: 1px solid #dddddd;
@@ -75,17 +52,7 @@ class MyPolicy extends PolymerElement {
         padding: 14px;
       }
 
-      .pad-table{
-        padding:20px;
-      }
-      .pad-table p{
-          border: 1px solid #ccc;
-          margin: 0;
-          border-bottom: none;
-          padding: 15px 15px 45px;
-          font-size: 20px;
-          font-family: 'Roboto';
-      }
+      
      .center-box{
        width:80%;
        margin:0 auto;
@@ -97,26 +64,10 @@ class MyPolicy extends PolymerElement {
       
     
     }
-      .container-box{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          flex-flow: wrap;
-      }
-      .box{
-          width: 13%;
-          height: 100px;
-          background: yellow;
-          margin: 20px;
-          box-sizing: border-box;
-          font-size: 16px;
-          margin-bottom: 60px;
-          text-align: center;
-      }
+     
       
       
-      
-        .head-tr,.head-tr:hover{
+        .head-tr{
           background: #9370DB;
           color: #fff;
         }
@@ -136,6 +87,7 @@ class MyPolicy extends PolymerElement {
         .bg-color{
           background: #cccccc1a;
         }
+        
       </style>
       <!--<routing></routing>-->
 

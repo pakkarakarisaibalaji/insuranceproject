@@ -42,7 +42,8 @@ class newForm extends PolymerElement {
   static get template() {
     return html`
       <style include="styles-global">
-   
+       
+    }
      
       </style>
      
@@ -64,7 +65,7 @@ class newForm extends PolymerElement {
 <!--<paperdropdown></paperdropdown>-->
 
 <paper-dropdown-menu label="Insurance" >
-<paper-listbox slot="dropdown-content" selected="0">
+<paper-listbox slot="dropdown-content" selected="0" class="dropdown-content  custom" horizontalAlign='left'>
   <paper-item></paper-item>
   <paper-item>Car Insurance</paper-item>
   <paper-item>Home Insurance</paper-item>
