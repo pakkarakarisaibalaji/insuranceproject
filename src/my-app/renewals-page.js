@@ -57,7 +57,9 @@ class Renewals extends PolymerElement {
       
     
     }
-      
+      #paynow{
+        padding-left: 28em;
+      }
       
       
         .head-tr,.head-tr:hover{
@@ -139,10 +141,10 @@ class Renewals extends PolymerElement {
         </tbody>
     </table>
     
-    <div class="center">
+    <div class="center" id="paynow">
     <!--<paper-button></paper-button>-->
     
-    <paper-button raised class="custom indigo" on-click="Paynow">Pay now
+    <paper-button raised class="custom indigo"  on-click="Paynow">Pay now
     </paper-button>
     </div>
 
