@@ -119,7 +119,7 @@ class Renewals extends PolymerElement {
       <table>
         <thead>
             <tr class="head-tr">
-                <th>policyNo</th>
+                <th>Policyno</th>
                 <th>Insurance Name</th>
                 <th>Premium Status</th>
                 <th>Premium Pending</th>

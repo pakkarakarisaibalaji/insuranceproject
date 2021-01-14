@@ -114,7 +114,7 @@ class MyPolicy extends PolymerElement {
       <table>
         <thead>
             <tr class="head-tr">
-                <th>policyNo</th>
+                <th>Policyno</th>
                 <th>Name</th>
                 <th>MonthlyPremium</th>
                 <th>AnnualPremium</th>
@@ -160,7 +160,7 @@ class MyPolicy extends PolymerElement {
 
   handleDataResponse(event, request){
     var response = request.response;  
-    this.data = response.sdata;
+    this.data = response.policy;
   }
 }
 /**window.customElements.define
