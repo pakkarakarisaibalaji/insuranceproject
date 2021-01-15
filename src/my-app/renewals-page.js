@@ -138,14 +138,16 @@ class Renewals extends PolymerElement {
                     <td>[[item.PremiumStatus]]</td>
                     <td>[[item.PremiumPending]]</td>
                     <!--<td>{{item.Payment}}</td>-->
-                    <td>
-                    {% if [[item.PremiumStatus]].toString() == "Pending" %}
+                   <!-- <td>
+                    {% if [[item.PremiumStatus]] == "Pending" %}
                       <input type="button"></input>
                     {%else%}
-                    -  
+                      
                     {% endif %}  
-                    </td>
+                    </td> -->
                     
+                    <td>{{item.Payment}}
+                    </td>
                     
                   
                   
@@ -203,7 +205,7 @@ return PremiumStatus == 'Pending';
 for(var i = 0; i < response.renewals.length; i++ ) {
 
   if(response.renewals[i].PremiumStatus == 'Pending'){
-    response.renewals[i].Payment = '<input type="button"></input>'; //"<paper-button raised class='custom indigo' on-click='Paynow'>Pay now</paper-button>";
+    response.renewals[i].Payment = `<input type="button"></input>`; //"<paper-button raised class='custom indigo' on-click='Paynow'>Pay now</paper-button>";
   }
   else{
     response.renewals[i].Payment = "";
