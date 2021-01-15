@@ -103,7 +103,8 @@ class Renewals extends PolymerElement {
    
       <div class="card">  
       <div class="bg-color">
-          <iron-ajax
+    
+      <iron-ajax
     auto
    
     url="src/assests/renewals.json"
@@ -123,21 +124,36 @@ class Renewals extends PolymerElement {
                 <th>Insurance Name</th>
                 <th>Premium Status</th>
                 <th>Premium Pending</th>
+                <th>Payment</th>
                 
             </tr>
         </thead>
           
         <tbody>
             <!-- dom-repate used to iterate an array values from iron-jax respose -->
-            <template is="dom-repeat" items="{{renewals}}">
+            <template is="dom-repeat"  items="{{renewals}}" >
                 <tr>
                     <td>[[item.policyNo]]</td>
                     <td>[[item.Name]]</td>
                     <td>[[item.PremiumStatus]]</td>
                     <td>[[item.PremiumPending]]</td>
+                    <!--<td>{{item.Payment}}</td>-->
+                    <td>
+                    {% if [[item.PremiumStatus]].toString() == "Pending" %}
+                      <input type="button"></input>
+                    {%else%}
+                    -  
+                    {% endif %}  
+                    </td>
                     
+                    
+                  
+                  
                 </tr>
             </template>
+            
+          
+                  
         </tbody>
     </table>
     
@@ -178,9 +194,22 @@ static get properties() {
     };
   }
 
+  _isEqualsTo(PremiumStatus, string) {
+return PremiumStatus == 'Pending';
+  }
   handleDataResponse(event, request){
     var response = request.response;  
-    this.renewals = response.renewals;
+    
+for(var i = 0; i < response.renewals.length; i++ ) {
+
+  if(response.renewals[i].PremiumStatus == 'Pending'){
+    response.renewals[i].Payment = '<input type="button"></input>'; //"<paper-button raised class='custom indigo' on-click='Paynow'>Pay now</paper-button>";
+  }
+  else{
+    response.renewals[i].Payment = "";
+  }
+}
+this.renewals = response.renewals;
   }
 }
 /**window.customElements.define

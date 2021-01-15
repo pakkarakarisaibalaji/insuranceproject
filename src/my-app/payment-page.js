@@ -42,20 +42,20 @@ class Payment extends PolymerElement {
       <!--<Header></Header>-->
       <h2>Payment Gateway</h2>
      
-      <paper-dropdown-menu label="Insurance Name" id="drop">
-<paper-listbox slot="dropdown-content" selected="0">
-  <paper-item></paper-item>
-  <paper-item>Car Insurance</paper-item>
-  <paper-item>Home Insurance</paper-item>
-  <paper-item>Health Insurance</paper-item>
-  <paper-item>Savings Traditional"</paper-item>
-  <paper-item>Personal Insurance</paper-item>
-  <paper-item>Long Term Savings</paper-item>
-  <paper-item>Retirement Plans</paper-item>
-  <paper-item>Savings Plans</paper-item>
-  <paper-item>Car Insurance/paper-item>
-</paper-listbox>
-</paper-dropdown-menu>
+//       <paper-dropdown-menu label="Insurance Name" id="drop">
+// <paper-listbox slot="dropdown-content" selected="0">
+//   <paper-item></paper-item>
+//   <paper-item>Car Insurance</paper-item>
+//   <paper-item>Home Insurance</paper-item>
+//   <paper-item>Health Insurance</paper-item>
+//   <paper-item>Savings Traditional"</paper-item>
+//   <paper-item>Personal Insurance</paper-item>
+//   <paper-item>Long Term Savings</paper-item>
+//   <paper-item>Retirement Plans</paper-item>
+//   <paper-item>Savings Plans</paper-item>
+//   <paper-item>Car Insurance/paper-item>
+// </paper-listbox>
+// </paper-dropdown-menu>
 
       <!--<paper-input></paper-input>-->
       

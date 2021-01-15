@@ -100,9 +100,7 @@ class MyPolicy extends PolymerElement {
 
       <iron-ajax
     auto
-   
     url="src/assests/data.json"
-   
     handle-as="json"
     on-response="handleDataResponse"
    >
@@ -131,6 +129,7 @@ class MyPolicy extends PolymerElement {
                     <td>₹[[item.MonthlyPremium]]</td>
                     <td>₹[[item.AnnualPremium]]</td>
                     
+                      
                 </tr>
             </template>
         </tbody>
