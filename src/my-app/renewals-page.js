@@ -94,6 +94,9 @@ class Renewals extends PolymerElement {
         
         }
         
+        .btnHidden{
+          display: none;
+        }
         
         
       </style>
@@ -105,67 +108,22 @@ class Renewals extends PolymerElement {
       <div class="bg-color">
     
       <iron-ajax
-    auto
-   
+    id="ajax"
     url="src/assests/renewals.json"
-   
     handle-as="json"
-    on-response="handleDataResponse"
-   >
+    on-response="handleDataResponse">
   </iron-ajax>
 
   
 
     <h1>My Renewals</h1>
-      <table>
-        <thead>
-            <tr class="head-tr">
-                <th>Policyno</th>
-                <th>Insurance Name</th>
-                <th>Premium Status</th>
-                <th>Premium Pending</th>
-                <th>Payment</th>
-                
-            </tr>
-        </thead>
-          
-        <tbody>
-            <!-- dom-repate used to iterate an array values from iron-jax respose -->
-            <template is="dom-repeat"  items="{{renewals}}" >
-                <tr>
-                    <td>[[item.policyNo]]</td>
-                    <td>[[item.Name]]</td>
-                    <td>[[item.PremiumStatus]]</td>
-                    <td>[[item.PremiumPending]]</td>
-                    <!--<td>{{item.Payment}}</td>-->
-                   <!-- <td>
-                    {% if [[item.PremiumStatus]] == "Pending" %}
-                      <input type="button"></input>
-                    {%else%}
-                      
-                    {% endif %}  
-                    </td> -->
-                    
-                    <td>{{item.Payment}}
-                    </td>
-                    
-                  
-                  
-                </tr>
-            </template>
-            
-          
-                  
-        </tbody>
-    </table>
-    
+    <div id="divDataTable">
+      
+    </div>
     <div class="center" id="paynow">
-    <!--<paper-button></paper-button>-->
-    
     <paper-button raised class="custom indigo"  on-click="Paynow">Pay now
     </paper-button>
     </div>
-
 </div>
 </div>
 
@@ -176,6 +134,7 @@ class Renewals extends PolymerElement {
  * paynow method
  * 
  * */
+
 
   Paynow(){    
 this.set('route.path', '/payment');   
@@ -189,30 +148,41 @@ static get properties() {
     return {
       renewals: {
         type: Array,
-        value: [],
-        
-      },
-      
+        value: []
+      }
     };
   }
 
-  _isEqualsTo(PremiumStatus, string) {
-return PremiumStatus == 'Pending';
-  }
+//   ready() {
+// //this.$.ajax.generateRequest();
+//   }
+
+connectedCallback() {
+  this.$.ajax.generateRequest();
+}
   handleDataResponse(event, request){
     var response = request.response;  
-    
-for(var i = 0; i < response.renewals.length; i++ ) {
+    this.renewals = response.renewals;    
 
-  if(response.renewals[i].PremiumStatus == 'Pending'){
-    response.renewals[i].Payment = `<input type="button"></input>`; //"<paper-button raised class='custom indigo' on-click='Paynow'>Pay now</paper-button>";
+    var arrayLen = this.renewals.length;
+    console.log(arrayLen);
+    var tBody = document.getElementById("divDataTable");
+    var rowString ="";
+    var hdr = "<table><thead><tr class='head-tr'><th>Policyno</th><th>Insurance Name</th><th>Premium Status</th><th>Premium Pending</th><th>Payment</th></tr></thead>";
+    var allRows = "";
+    for (var i=0; i< arrayLen; i++){
+      console.log(i);
+      if(this.renewals[i].PremiumStatus == "Pending")
+        rowString = "<tr><td>" + this.renewals[i].policyNo + "</td><td>" + this.renewals[i].Name + "</td><td>"+ this.renewals[i].PremiumStatus + "</td><td>" +this.renewals[i].PremiumPending + "</td><td>" + "<paper-button raised class='custom indigo' on-click='Paynow'>Pay now</paper-button>" + "</td></tr>";
+      else
+        rowString = "<tr><td>" +this.renewals[i].policyNo+ "</td><td>" + this.renewals[i].Name + "</td><td>" +this.renewals[i].PremiumStatus + "</td><td>" + this.renewals[i].PremiumPending + "</td><td></td></tr>";
+      
+        allRows = allRows + rowString;
+    }   
+
+    tBody.innerHTML = hdr + "<tbody>" + allRows +  "</tbody></table>" ;
   }
-  else{
-    response.renewals[i].Payment = "";
-  }
-}
-this.renewals = response.renewals;
-  }
+
 }
 /**window.customElements.define
  * this is will register our component to browser
